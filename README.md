@@ -3,7 +3,7 @@ Create [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuildin
 
 # Usage
 ```
-npm install mustache pob-building-creater
+npm install pob-building-creater
 ```
 Create building:
 ```ts

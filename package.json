@@ -1,6 +1,6 @@
 {
   "name": "pob-building-creater",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -12,6 +12,7 @@
   },
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-typescript": "^11.1.0",
     "@types/jest": "^29.5.0",
     "@types/mustache": "^4.2.2",
