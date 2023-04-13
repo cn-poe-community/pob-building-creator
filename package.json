@@ -1,8 +1,8 @@
 {
   "name": "pob-building-creater",
-  "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
