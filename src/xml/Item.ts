@@ -117,12 +117,12 @@ Implicits: {{implicitCount}}
 {{#explicitMods}}
 {{.}}
 {{/explicitMods}}
-{{#craftedMods}}
-{crafted}{{.}}
-{{/craftedMods}}
 {{#fracturedMods}}
 {fractured}{{.}}
 {{/fracturedMods}}
+{{#craftedMods}}
+{crafted}{{.}}
+{{/craftedMods}}
 {{#crucibleMods}}
 {crucible}{{.}}
 {{/crucibleMods}}
