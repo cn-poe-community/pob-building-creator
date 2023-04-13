@@ -1,5 +1,5 @@
 # pob-building-creater
-Creat [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuilding) builds data from POE API data.
+Create [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuilding) builds data from POE API data.
 
 # Usage
 ```

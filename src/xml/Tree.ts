@@ -9,8 +9,6 @@ ${this.spec}
     }
 }
 
-// Passive skills tree can be readed from Spec's properties or Spec.URL
-// Here use Spec's properties
 export class Spec {
     treeVersion = "3_21";
     url = new URL();
