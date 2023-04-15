@@ -23,7 +23,7 @@ export class SkillSet {
     }
 }
 
-// 1. skills only depend on link, two passive gem can be in on skill
+// 1. skills only depend on link, two active gems can be in one skill
 // 2. vaal gem treats as one gem
 // 3. computed gem(like Arcanist Brand) treats as one gem
 export class Skill {
