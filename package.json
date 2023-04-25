@@ -4,6 +4,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cn-poe-community/pob-building-creater.git"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
     "format": "prettier --write src/**/*.ts",
