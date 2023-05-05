@@ -28,6 +28,7 @@ export class Item {
         const json = this.json;
 
         model.rarity = toPobRariy(this.json.frameType);
+        
         const propMap = new Map<string, any>();
         if (json.properties) {
             (json.properties as any[]).forEach((prop) => propMap.set(prop.name, prop));
@@ -39,6 +40,13 @@ export class Item {
         model.armout = propMap.get("Armour")?.values[0][0];
         model.ward = propMap.get("Ward")?.values[0][0];
         model.radius = propMap.get("Radius")?.values[0][0];
+        model.limitedTo = propMap.get("Limited to")?.values[0][0];
+        
+        const requireMap = new Map<string,any>();
+        if (json.requirements) {
+            (json.requirements as any[]).forEach((requirement) => requireMap.set(requirement.name, requirement));
+        }
+        model.requireClass = requireMap.get("Class:")?.values[0][0];
 
         model.enchantMods = (json.enchantMods as string[])?.map((mod) => mod.split("\n")).flat();
         model.implicitMods = (json.implicitMods as string[])?.map((mod) => mod.split("\n")).flat();
@@ -107,6 +115,12 @@ Sockets: {{Sockets}}
 {{#radius}}
 Radius: {{radius}}
 {{/radius}}
+{{#limitedTo}}
+Limited to: {{limitedTo}}
+{{/limitedTo}}
+{{#requireClass}}
+Requires Class {{requireClass}}
+{{/requireClass}}
 Implicits: {{implicitCount}}
 {{#enchantMods}}
 {crafted}{{.}}
