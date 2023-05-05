@@ -28,7 +28,7 @@ export class Item {
         const json = this.json;
 
         model.rarity = toPobRariy(this.json.frameType);
-        
+
         const propMap = new Map<string, any>();
         if (json.properties) {
             (json.properties as any[]).forEach((prop) => propMap.set(prop.name, prop));
@@ -41,10 +41,12 @@ export class Item {
         model.ward = propMap.get("Ward")?.values[0][0];
         model.radius = propMap.get("Radius")?.values[0][0];
         model.limitedTo = propMap.get("Limited to")?.values[0][0];
-        
-        const requireMap = new Map<string,any>();
+
+        const requireMap = new Map<string, any>();
         if (json.requirements) {
-            (json.requirements as any[]).forEach((requirement) => requireMap.set(requirement.name, requirement));
+            (json.requirements as any[]).forEach((requirement) =>
+                requireMap.set(requirement.name, requirement)
+            );
         }
         model.requireClass = requireMap.get("Class:")?.values[0][0];
 
