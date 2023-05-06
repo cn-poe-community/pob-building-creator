@@ -8,6 +8,7 @@ const RARITY_MAP: { [key: string]: string } = {
     2: "RARE",
     3: "UNIQUE",
     9: "RELIC",
+    10: "RELIC",
 };
 
 function toPobRariy(frameType: number) {
