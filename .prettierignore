@@ -1,3 +1,2 @@
-dist
-.yarn
-.pnp.*
+dist/
+node_modules/
