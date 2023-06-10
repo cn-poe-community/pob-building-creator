@@ -15,9 +15,13 @@ function toPobRariy(frameType: number) {
     return RARITY_MAP[frameType];
 }
 
+const ITEM_NAME_MAP: { [key: string]: string } = {
+    "Doppelgänger Guise": "Doppelganger Guise",
+};
+
 export class Item {
     id: number;
-    json: any;
+    readonly json: any;
 
     constructor(id: number, json: any) {
         this.id = id;
@@ -29,6 +33,12 @@ export class Item {
         const json = this.json;
 
         model.rarity = toPobRariy(this.json.frameType);
+
+        if (json.name) {
+            if (ITEM_NAME_MAP[json.name]) {
+                model.name = ITEM_NAME_MAP[json.name];
+            }
+        }
 
         const propMap = new Map<string, any>();
         if (json.properties) {
