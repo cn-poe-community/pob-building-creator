@@ -1,10 +1,10 @@
-import { Item } from "./xml/Item";
-import { PathOfBuilding } from "./xml/PathOfBuilding";
+import { Item } from "./xml/Item.js";
+import { PathOfBuilding } from "./xml/PathOfBuilding.js";
 import Mustache from "mustache";
-import { Slot } from "./xml/Slot";
-import { Skill } from "./xml/Skill";
-import { Socket } from "./xml/Tree";
-import { Base64 } from "../node_modules/js-base64/base64";
+import { Slot } from "./xml/Slot.js";
+import { Skill } from "./xml/Skill.js";
+import { Socket } from "./xml/Tree.js";
+import { Base64 } from "js-base64";
 
 export function transform(items: any, passiveSkills: any): PathOfBuilding {
     // disable xml/html escape

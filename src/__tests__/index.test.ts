@@ -2,9 +2,9 @@ import { transform } from "../index";
 import items from "./testcase/items.json";
 import passiveSkills from "./testcase/passiveSkills.json";
 
-const fs = require("fs");
+import { writeFileSync } from "node:fs";
 
 test("transform", () => {
     const pob = transform(items, passiveSkills);
-    fs.writeFileSync("building.xml", pob.toString());
+    writeFileSync("building.xml", pob.toString());
 });

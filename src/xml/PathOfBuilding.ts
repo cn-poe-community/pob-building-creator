@@ -1,7 +1,7 @@
-import { Build } from "./Build";
-import { Items } from "./Item";
-import { Skills } from "./Skill";
-import { Tree } from "./Tree";
+import { Build } from "./Build.js";
+import { Items } from "./Item.js";
+import { Skills } from "./Skill.js";
+import { Tree } from "./Tree.js";
 
 export class PathOfBuilding {
     build = new Build();

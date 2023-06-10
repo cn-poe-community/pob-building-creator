@@ -1,5 +1,5 @@
 import Mustache from "mustache";
-import { getFirstNum, getFirstNumOrDefault } from "../common/common";
+import { getFirstNum, getFirstNumOrDefault } from "../common/common.js";
 
 export class Skills {
     skillSet = new SkillSet();
