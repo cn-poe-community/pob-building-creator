@@ -78,9 +78,7 @@ export class Item {
                 buf.push(arr[i].sColour);
             }
 
-            // because json contains sockets
-            // use Sockets
-            model.Sockets = buf.join("");
+            model.sockets = buf.join("");
         }
 
         let implicitCount = 0;
@@ -122,9 +120,9 @@ Item Level: {{ilvl}}
 {{#quality}}
 Quality: {{quality}}
 {{/quality}}
-{{#Sockets}}
-Sockets: {{Sockets}}
-{{/Sockets}}
+{{#sockets}}
+Sockets: {{sockets}}
+{{/sockets}}
 {{#radius}}
 Radius: {{radius}}
 {{/radius}}
