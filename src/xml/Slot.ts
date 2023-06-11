@@ -4,16 +4,22 @@ export class Slot {
     name: string;
     itemId?: number;
     nodeId?: number;
-    showItemId = () => this.itemId !== undefined;
+    active: boolean;
 
     private constructor(name: string, itemId?: number, nodeId?: number) {
         this.name = name;
         this.itemId = itemId;
         this.nodeId = nodeId;
+        this.active = false;
     }
 
     public static NewEquipmentSlot(name: string, itemId: number): Slot {
-        return new Slot(name, itemId, undefined);
+        const slot = new Slot(name, itemId, undefined);
+        if (slot.name.startsWith("Flask ")) {
+            slot.active = true;
+        }
+
+        return slot;
     }
 
     public static NewJewelSlot(name: string, nodeId: number) {
@@ -21,7 +27,7 @@ export class Slot {
     }
 
     public toString(): string {
-        const tmpl = `<Slot name="{{name}}" {{#itemId}}itemId="{{itemId}}"{{/itemId}} {{#nodeId}}nodeId="{{nodeId}}"{{/nodeId}}/>`;
+        const tmpl = `<Slot {{#active}}active="{{active}}"{{/active}} name="{{name}}" {{#itemId}}itemId="{{itemId}}"{{/itemId}} {{#nodeId}}nodeId="{{nodeId}}"{{/nodeId}}/>`;
         return Mustache.render(tmpl, this);
     }
 }
