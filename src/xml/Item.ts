@@ -17,6 +17,11 @@ function toPobRariy(frameType: number) {
 
 const ITEM_NAME_MAP: { [key: string]: string } = {
     "Doppelgänger Guise": "Doppelganger Guise",
+    Mjölner: "Mjolner",
+};
+
+const BASE_TYPE_MAP: { [key: string]: string } = {
+    "Maelström Staff": "Maelstrom Staff",
 };
 
 export class Item {
@@ -37,6 +42,18 @@ export class Item {
         if (json.name) {
             if (ITEM_NAME_MAP[json.name]) {
                 model.name = ITEM_NAME_MAP[json.name];
+            }
+            if (BASE_TYPE_MAP[json.baseType]) {
+                model.baseType = BASE_TYPE_MAP[json.baseType];
+            }
+        } else {
+            const typeLine: string = json.typeLine;
+            for (let old in BASE_TYPE_MAP) {
+                if (typeLine.includes(old)) {
+                    const newType = BASE_TYPE_MAP[old];
+                    model.typeLine = typeLine.replace(old, newType);
+                    break;
+                }
             }
         }
 
