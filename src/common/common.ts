@@ -12,6 +12,24 @@ export function getAscendancy(classId: number, ascendancyId: number) {
     return CLASSES[classId].ascendancies[ascendancyId];
 }
 
+export function getClassId(
+    className: string
+): { classId: number; ascendancyId: number } | undefined {
+    for (let i = 0; i < CLASSES.length; i++) {
+        if (CLASSES[i].name === className) {
+            return { classId: i, ascendancyId: 0 };
+        }
+
+        const ascendancies = CLASSES[i].ascendancies;
+        for (let j = 1; j < ascendancies.length; j++) {
+            if (ascendancies[j] === className) {
+                return { classId: i, ascendancyId: j };
+            }
+        }
+    }
+    return undefined;
+}
+
 export function getFirstNum(text: string): number | undefined {
     //text likes + 20%, return 20
     if (text) {

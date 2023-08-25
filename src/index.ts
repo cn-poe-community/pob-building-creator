@@ -5,6 +5,7 @@ import { Slot } from "./xml/Slot.js";
 import { Skill } from "./xml/Skill.js";
 import { Socket } from "./xml/Tree.js";
 import { Base64 } from "js-base64";
+import { getClassId } from "./common/common.js";
 
 export function transform(items: any, passiveSkills: any): PathOfBuilding {
     // disable xml/html escape
@@ -142,22 +143,28 @@ function getNodeId(jewelSlotIndex: number): number {
 // copy from https://github.com/afq984/void-battery/blob/main/web/pobgen.py
 function getEncodedTree(char: any, tree: any) {
     const hashes: number[] = tree.hashes;
-    const head: number[] = [0, 0, 0, 6, char.classId, char.ascendancyClass, hashes.length];
+    var classIds = getClassId(char.class);
+    if (classIds === undefined) {
+        classIds = { classId: 0, ascendancyId: 0 };
+    }
+    const head: number[] = [0, 0, 0, 6, classIds.classId, classIds.ascendancyId];
     const masteryEffects: number[] = [];
-    for (const child of tree.mastery_effects) {
-        const effect = BigInt(child) >> BigInt(16);
-        const node = BigInt(child) & BigInt(65535);
-        masteryEffects.push(Number(effect));
+    for (const [node, effect] of Object.entries<number>(tree.mastery_effects)) {
+        masteryEffects.push(effect);
         masteryEffects.push(Number(node));
     }
 
-    const buffer = new ArrayBuffer(head.length + hashes.length * 2 + 2 + masteryEffects.length * 2);
+    const buffer = new ArrayBuffer(
+        head.length + 1 + hashes.length * 2 + 2 + masteryEffects.length * 2
+    );
     const view = new DataView(buffer);
     var offset = 0;
     for (const n of head) {
         view.setUint8(offset, n);
         offset += 1;
     }
+    view.setUint8(offset, hashes.length);
+    offset += 1;
     for (const hash of hashes) {
         view.setUint16(offset, hash);
         offset += 2;

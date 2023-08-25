@@ -10,14 +10,16 @@ ${this.spec}
 }
 
 export class Spec {
-    treeVersion = "3_21";
+    treeVersion = "3_22";
     url = new URL();
     sockets = new Sockets();
+    overrides = new Overrides();
 
     public toString(): string {
-        const tmpl = `<Spec treeVersion="{{treeVersion}}"">
+        const tmpl = `<Spec treeVersion="{{treeVersion}}">
 ${this.url}
 ${this.sockets}
+${this.overrides}
 </Spec>`;
         return Mustache.render(tmpl, this);
     }
@@ -27,9 +29,11 @@ export class URL {
     url: string = "";
 
     public toString(): string {
-        return `<URL>
+        return this.url !== ""
+            ? `<URL>
 ${this.url}
-</URL>`;
+</URL>`
+            : `<URL/>`;
     }
 }
 
@@ -61,5 +65,11 @@ export class Socket {
 
     public toString(): string {
         return `<Socket nodeId="${this.nodeId}" itemId="${this.itemId}"/>`;
+    }
+}
+
+export class Overrides {
+    public toString(): string {
+        return `<Overrides/>`;
     }
 }
