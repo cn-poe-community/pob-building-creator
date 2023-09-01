@@ -1,6 +1,6 @@
 import { transform } from "../index";
 import items from "./testcase/items.json";
-import passiveSkills from "./testcase/passiveSkills.json";
+import passiveSkills from "./testcase/passiveskills.json";
 
 import { writeFileSync } from "node:fs";
 

@@ -11,17 +11,44 @@ ${this.spec}
 
 export class Spec {
     treeVersion = "3_22";
+    ascendClassId = 0;
+    classId = 0;
+    masteryEffects: MasteryEffect[] = [];
+    nodes: number[] = [];
+
     url = new URL();
     sockets = new Sockets();
     overrides = new Overrides();
 
+    public viewModel(): any {
+        const model: any = {};
+        model.masteryEffectsView = this.masteryEffects.map((me) => me.toString()).join(",");
+        model.nodesView = this.nodes.join(",");
+
+        return Object.assign({}, this, model);
+    }
+
     public toString(): string {
-        const tmpl = `<Spec treeVersion="{{treeVersion}}">
-${this.url}
-${this.sockets}
-${this.overrides}
+        const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
+{{url}}
+{{socks}}
+{{overrides}}
 </Spec>`;
-        return Mustache.render(tmpl, this);
+        return Mustache.render(tmpl, this.viewModel());
+    }
+}
+
+export class MasteryEffect {
+    nodeId: number;
+    effectId: number;
+
+    public constructor(nodeId: number, effectId: number) {
+        this.nodeId = nodeId;
+        this.effectId = effectId;
+    }
+
+    public toString(): string {
+        return `{${this.nodeId},${this.effectId}}`;
     }
 }
 
@@ -69,7 +96,48 @@ export class Socket {
 }
 
 export class Overrides {
+    members: Override[] = [];
+
+    public parse(skillOverrides: any) {
+        this.members = [];
+        for (const [key, value] of Object.entries(skillOverrides)) {
+            this.members.push(new Override(key, value));
+        }
+    }
+
     public toString(): string {
-        return `<Overrides/>`;
+        const tmpl = `<Overrides>
+{{#members}}
+{{.}}
+{{/members}}
+</Overrides>`;
+
+        return Mustache.render(tmpl, this);
+    }
+}
+
+export class Override {
+    dn: string;
+    icon: string;
+    nodeId: string;
+    activeEffectImage: string;
+    stats: string[];
+
+    constructor(nodeId: string, json: any) {
+        this.dn = json.name;
+        this.icon = json.icon;
+        this.nodeId = nodeId;
+        this.activeEffectImage = json.activeEffectImage;
+        this.stats = json.stats;
+    }
+
+    public toString(): string {
+        const tmpl = `<Override dn="${this.dn}" icon="${this.icon}" nodeId="${this.nodeId}" activeEffectImage="${this.activeEffectImage}">
+{{#stats}}
+{{.}}
+{{/stats}}
+</Override>`;
+
+        return Mustache.render(tmpl, this);
     }
 }

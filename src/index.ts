@@ -3,7 +3,7 @@ import { PathOfBuilding } from "./xml/PathOfBuilding.js";
 import Mustache from "mustache";
 import { Slot } from "./xml/Slot.js";
 import { Skill } from "./xml/Skill.js";
-import { Socket } from "./xml/Tree.js";
+import { MasteryEffect, Socket } from "./xml/Tree.js";
 import { Base64 } from "js-base64";
 import { getClassId } from "./common/common.js";
 
@@ -82,10 +82,24 @@ export function transform(items: any, passiveSkills: any): PathOfBuilding {
         spec.sockets.append(socket);
     }
 
+    var classIds = getClassId(character.class);
+    if (classIds !== undefined) {
+        spec.ascendClassId = classIds.ascendancyId;
+        spec.classId = classIds.classId;
+    }
+
+    for (const [node, effect] of Object.entries<number>(passiveSkills.mastery_effects)) {
+        spec.masteryEffects.push(new MasteryEffect(Number(node), effect));
+    }
+
+    spec.nodes = passiveSkills.hashes;
+
     spec.url.url = `https://www.pathofexile.com/passive-skill-tree/${getEncodedTree(
         character,
         passiveSkills
     )}`;
+
+    spec.overrides.parse(passiveSkills.skill_overrides);
 
     return pob;
 }
