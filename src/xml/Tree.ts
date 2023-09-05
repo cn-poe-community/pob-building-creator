@@ -31,7 +31,7 @@ export class Spec {
     public toString(): string {
         const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
 {{url}}
-{{socks}}
+{{sockets}}
 {{overrides}}
 </Spec>`;
         return Mustache.render(tmpl, this.viewModel());

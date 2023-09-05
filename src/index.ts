@@ -45,7 +45,7 @@ export function transform(items: any, passiveSkills: any): PathOfBuilding {
                 if (si.abyssJewel) {
                     const item = new Item(idGenerator++, si);
                     itemList.push(item);
-                    const siSlotName = `slotName Abyssal Socket ${si.socket + 1}`;
+                    const siSlotName = `${slotName} Abyssal Socket ${si.socket + 1}`;
                     const slot = Slot.NewEquipmentSlot(siSlotName, item.id);
                     slotSet.append(slot);
                     slot.itemId = item.id;
