@@ -40,12 +40,15 @@ export function transform(items: any, passiveSkills: any): PathOfBuilding {
             let group = [];
             let prevGroupNum = 0;
             const skills = pob.skills.skillSet.skills;
+            
+            let abyssJewelCount = 0;
             for (let i = 0; i < socketedItems.length; i++) {
                 const si = socketedItems[i];
                 if (si.abyssJewel) {
+                    abyssJewelCount++;
                     const item = new Item(idGenerator++, si);
                     itemList.push(item);
-                    const siSlotName = `${slotName} Abyssal Socket ${si.socket + 1}`;
+                    const siSlotName = `${slotName} Abyssal Socket ${abyssJewelCount}`;
                     const slot = Slot.NewEquipmentSlot(siSlotName, item.id);
                     slotSet.append(slot);
                     slot.itemId = item.id;
@@ -87,6 +90,8 @@ export function transform(items: any, passiveSkills: any): PathOfBuilding {
         spec.ascendClassId = classIds.ascendancyId;
         spec.classId = classIds.classId;
     }
+
+    spec.secondaryAscendClassId = passiveSkills.alternate_ascendancy;
 
     for (const [node, effect] of Object.entries<number>(passiveSkills.mastery_effects)) {
         spec.masteryEffects.push(new MasteryEffect(Number(node), effect));
@@ -148,7 +153,7 @@ const JEWEL_SLOTS = [
     61419, 2491, 54127, 32763, 26196, 33631, 21984, 29712, 48679, 9408, 12613, 16218, 2311, 22994,
     40400, 46393, 61305, 12161, 3109, 49080, 17219, 44169, 24970, 36931, 14993, 10532, 23756, 46519,
     23984, 51198, 61666, 6910, 49684, 33753, 18436, 11150, 22748, 64583, 61288, 13170, 9797, 41876,
-    59585,
+    59585, 43670, 29914, 18060
 ];
 function getNodeId(jewelSlotIndex: number): number {
     return JEWEL_SLOTS[jewelSlotIndex];

@@ -10,8 +10,9 @@ ${this.spec}
 }
 
 export class Spec {
-    treeVersion = "3_22";
+    treeVersion = "3_23";
     ascendClassId = 0;
+    secondaryAscendClassId = 0;
     classId = 0;
     masteryEffects: MasteryEffect[] = [];
     nodes: number[] = [];
@@ -29,7 +30,7 @@ export class Spec {
     }
 
     public toString(): string {
-        const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
+        const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" secondaryAscendClassId="{{secondaryAscendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
 {{url}}
 {{sockets}}
 {{overrides}}

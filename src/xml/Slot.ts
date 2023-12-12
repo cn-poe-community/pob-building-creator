@@ -2,6 +2,7 @@ import Mustache from "mustache";
 
 export class Slot {
     name: string;
+    itemPbURL = "";
     itemId?: number;
     nodeId?: number;
     active: boolean;
@@ -27,20 +28,32 @@ export class Slot {
     }
 
     public toString(): string {
-        const tmpl = `<Slot {{#active}}active="{{active}}"{{/active}} name="{{name}}" {{#itemId}}itemId="{{itemId}}"{{/itemId}} {{#nodeId}}nodeId="{{nodeId}}"{{/nodeId}}/>`;
+        const tmpl = `<Slot itemPbURL="${this.itemPbURL}" {{#active}}active="{{active}}"{{/active}} name="{{name}}" {{#itemId}}itemId="{{itemId}}"{{/itemId}} {{#nodeId}}nodeId="{{nodeId}}"{{/nodeId}}/>`;
         return Mustache.render(tmpl, this);
     }
 }
 
-export class ItemSet {
-    slots: Slot[] = [];
+export class SocketIdURL {
+    nodeId = 0;
+    name = "";
+    itemPbURL = "";
 
-    public append(slot: Slot) {
-        this.slots.push(slot);
+    public toString(){
+        return `<SocketIdURL nodeId="${this.nodeId}" name="${this.name}" itemPbURL="${this.itemPbURL}"/>`;
+    }
+}
+
+export class ItemSet {
+    useSecondWeaponSet: boolean = false;
+    id: number = 1;
+    slots: (Slot|SocketIdURL)[] = [];
+
+    public append(item: Slot|SocketIdURL) {
+        this.slots.push(item);
     }
 
     public toString() {
-        const tmpl = `<ItemSet useSecondWeaponSet="false" id="1">
+        const tmpl = `<ItemSet useSecondWeaponSet="${this.useSecondWeaponSet}" id="${this.id}">
 {{#slots}}
 {{.}}
 {{/slots}}
