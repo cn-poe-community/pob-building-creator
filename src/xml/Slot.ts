@@ -38,7 +38,7 @@ export class SocketIdURL {
     name = "";
     itemPbURL = "";
 
-    public toString(){
+    public toString() {
         return `<SocketIdURL nodeId="${this.nodeId}" name="${this.name}" itemPbURL="${this.itemPbURL}"/>`;
     }
 }
@@ -46,9 +46,9 @@ export class SocketIdURL {
 export class ItemSet {
     useSecondWeaponSet: boolean = false;
     id: number = 1;
-    slots: (Slot|SocketIdURL)[] = [];
+    slots: (Slot | SocketIdURL)[] = [];
 
-    public append(item: Slot|SocketIdURL) {
+    public append(item: Slot | SocketIdURL) {
         this.slots.push(item);
     }
 
