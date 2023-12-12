@@ -5,7 +5,7 @@ import { getSlotName } from "./slot.js";
 import { Slot } from "../xml/Slot.js";
 import { Skill } from "../xml/Skill.js";
 import { MasteryEffect, Socket } from "../xml/Tree.js";
-import { getClassId, getEncodedTree, getNodeId } from "./tree.js";
+import { getAscendancy, getClass, getClassId, getEncodedTree, getNodeId } from "./tree.js";
 
 export class Transformer {
     private itemsData: any;
@@ -25,7 +25,12 @@ export class Transformer {
 
         // fill build
         const build = building.build;
-        build.level = this.itemsData.character.level;
+        const character = this.itemsData.character;
+        build.level = character.level;
+
+        var classIds = getClassId(character.class)!;
+        build.className = getClass(classIds.classId);
+        build.ascendClassName = getAscendancy(classIds.classId, classIds.ascendancyId);
 
         // parse json
         this.parseItems();

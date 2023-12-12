@@ -22,21 +22,23 @@ const CLASSES = [
     { name: "Shadow", ascendancies: ["None", "Assassin", "Trickster", "Saboteur"] },
 ];
 
-export function getAscendancy(classId: number, ascendancyId: number) {
+export function getClass(classId: number): string {
+    return CLASSES[classId].name;
+}
+
+export function getAscendancy(classId: number, ascendancyId: number): string {
     return CLASSES[classId].ascendancies[ascendancyId];
 }
 
-export function getClassId(
-    className: string
-): { classId: number; ascendancyId: number } | undefined {
+export function getClassId(name: string): { classId: number; ascendancyId: number } | undefined {
     for (let i = 0; i < CLASSES.length; i++) {
-        if (CLASSES[i].name === className) {
+        if (CLASSES[i].name === name) {
             return { classId: i, ascendancyId: 0 };
         }
 
         const ascendancies = CLASSES[i].ascendancies;
         for (let j = 1; j < ascendancies.length; j++) {
-            if (ascendancies[j] === className) {
+            if (ascendancies[j] === name) {
                 return { classId: i, ascendancyId: j };
             }
         }
