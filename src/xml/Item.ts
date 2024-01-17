@@ -107,7 +107,11 @@ export class Item {
         }
         model.implicitCount = implicitCount;
 
-        return Object.assign({}, json, model);
+        if (json.influences) {
+            Object.assign(model, json.influences);
+        }
+
+        return Object.assign(model, json);
     }
 
     public toString(): string {
@@ -133,6 +137,30 @@ Armour: {{armout}}
 Ward: {{ward}}
 {{/ward}}
 Unique ID: {{id}}
+{{#shaper}}
+Shaper Item
+{{/shaper}}
+{{#elder}}
+Elder Item
+{{/elder}}
+{{#warlord}}
+Warlord Item
+{{/warlord}}
+{{#hunter}}
+Hunter Item
+{{/hunter}}
+{{#crusader}}
+Crusader Item
+{{/crusader}}
+{{#redeemer}}
+Redeemer Item
+{{/redeemer}}
+{{#searing}}
+Searing Exarch Item
+{{/searing}}
+{{#tangled}}
+Eater of Worlds Item
+{{/tangled}}
 Item Level: {{ilvl}}
 {{#quality}}
 Quality: {{quality}}
@@ -168,18 +196,9 @@ Implicits: {{implicitCount}}
 {{#crucibleMods}}
 {crucible}{{.}}
 {{/crucibleMods}}
-{{#shaper}}
-Shaper Item
-{{/shaper}}
-{{#elder}}
-Elder Item
-{{/elder}}
-{{#fractured}}
-Fractured Item
-{{/fractured}}
-{{#synthesised}}
-Fractured Item
-{{/synthesised}}
+{{#corrupted}}
+Corrupted
+{{/corrupted}}
 </Item>`;
         return Mustache.render(tmpl, this.viewModel());
     }
