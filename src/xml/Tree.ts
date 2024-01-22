@@ -17,7 +17,6 @@ export class Spec {
     masteryEffects: MasteryEffect[] = [];
     nodes: number[] = [];
 
-    url = new URL();
     sockets = new Sockets();
     overrides = new Overrides();
 
@@ -31,7 +30,6 @@ export class Spec {
 
     public toString(): string {
         const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" secondaryAscendClassId="{{secondaryAscendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
-{{url}}
 {{sockets}}
 {{overrides}}
 </Spec>`;
@@ -50,18 +48,6 @@ export class MasteryEffect {
 
     public toString(): string {
         return `{${this.nodeId},${this.effectId}}`;
-    }
-}
-
-export class URL {
-    url: string = "";
-
-    public toString(): string {
-        return this.url !== ""
-            ? `<URL>
-${this.url}
-</URL>`
-            : `<URL/>`;
     }
 }
 
