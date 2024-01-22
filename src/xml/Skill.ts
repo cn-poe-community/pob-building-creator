@@ -24,8 +24,8 @@ export class SkillSet {
 }
 
 // 1. skills only depend on link, two active gems can be in one skill
-// 2. vaal gem treats as one gem
-// 3. computed gem(like Arcanist Brand) treats as one gem
+// 2. vaal gem is treated as one gem
+// 3. computed gem(like Arcanist Brand) is treated as one gem
 export class Skill {
     slot = "";
     gems: Gem[] = [];
@@ -61,11 +61,6 @@ export class Gem {
         this.level = getFirstNumOrDefault(propMap.get("Level")?.values[0][0], 20);
         this.quality = getFirstNumOrDefault(propMap.get("Quality")?.values[0][0], 0);
         this.nameSpec = json.baseType.replace(" Support", "");
-
-        const matched = json.typeLine.match(ALT_MATCHER);
-        if (matched) {
-            this.qualityId = ALTERNATE_MAP[matched[0]];
-        }
     }
 
     public toString(): string {
@@ -73,11 +68,3 @@ export class Gem {
         return Mustache.render(tmpl, this);
     }
 }
-
-const ALTERNATE_MAP: { [key: string]: string } = {
-    "Anomalous ": "Alternate1",
-    "Divergent ": "Alternate2",
-    "Phantasmal ": "Alternate3",
-};
-
-const ALT_MATCHER = new RegExp(`^${Object.getOwnPropertyNames(ALTERNATE_MAP).join("|")}`);

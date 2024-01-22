@@ -4,7 +4,7 @@ export class Build {
     ascendClassName = "None";
 
     toString(): string {
-        return `<Build level="${this.level}" className="${this.className}" ascendClassName="${this.ascendClassName}"   targetVersion="3_0" mainSocketGroup="1" viewMode="ITEMS">
+        return `<Build level="${this.level}" className="${this.className}" ascendClassName="${this.ascendClassName}" targetVersion="3_0" mainSocketGroup="1" viewMode="ITEMS">
 </Build>`;
     }
 }
