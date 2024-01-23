@@ -5,7 +5,13 @@ import { getSlotName } from "./slot.js";
 import { Slot } from "../xml/Slot.js";
 import { Skill } from "../xml/Skill.js";
 import { MasteryEffect, Socket } from "../xml/Tree.js";
-import { getAscendancy, getClass, getClassId, getEncodedTree, getNodeId } from "./tree.js";
+import {
+    enabledPobNodeIdsOfJewels,
+    getAscendancy,
+    getClass,
+    getClassId,
+    getNodeIdOfSlot,
+} from "./tree/tree.js";
 
 export class Transformer {
     private itemsData: any;
@@ -115,7 +121,7 @@ export class Transformer {
             const item = new Item(this.itemIdGenerator++, itemData);
             itemList.push(item);
 
-            const socket = new Socket(getNodeId(itemData.x), item.id);
+            const socket = new Socket(getNodeIdOfSlot(itemData.x), item.id);
             spec.sockets.append(socket);
         }
 
@@ -135,10 +141,12 @@ export class Transformer {
 
         spec.nodes = this.passiveSkillsData.hashes;
 
-        spec.url.url = `https://www.pathofexile.com/passive-skill-tree/${getEncodedTree(
-            character,
-            this.passiveSkillsData
-        )}`;
+        spec.nodes.push(
+            ...enabledPobNodeIdsOfJewels(
+                this.passiveSkillsData.hashes_ex,
+                this.passiveSkillsData.jewel_data
+            )
+        );
 
         spec.overrides.parse(this.passiveSkillsData.skill_overrides);
     }
