@@ -39,6 +39,9 @@ export class Item {
 
         model.rarity = toPobRariy(this.json.frameType);
 
+        model.name = json.name;
+        model.baseType = json.baseType;
+        model.typeLine = json.typeLine;
         if (json.name) {
             if (ITEM_NAME_MAP[json.name]) {
                 model.name = ITEM_NAME_MAP[json.name];
@@ -48,10 +51,9 @@ export class Item {
             }
         } else {
             const typeLine: string = json.typeLine;
-            for (let old in BASE_TYPE_MAP) {
-                if (typeLine.includes(old)) {
-                    const newType = BASE_TYPE_MAP[old];
-                    model.typeLine = typeLine.replace(old, newType);
+            for (let baseType in BASE_TYPE_MAP) {
+                if (typeLine.includes(baseType)) {
+                    model.typeLine = typeLine.replace(baseType, BASE_TYPE_MAP[baseType]);
                     break;
                 }
             }
@@ -108,10 +110,16 @@ export class Item {
         model.implicitCount = implicitCount;
 
         if (json.influences) {
-            Object.assign(model, json.influences);
+            Object.assign(model, json.influences); // shaper,elder,warlord,hunter,crusader,redeemer
         }
 
-        return Object.assign(model, json);
+        model.id = json.id;
+        model.searing = json.searing;
+        model.tangled = json.tangled;
+        model.ilvl = json.ilvl;
+        model.corrupted = json.corrupted;
+
+        return model;
     }
 
     public toString(): string {
