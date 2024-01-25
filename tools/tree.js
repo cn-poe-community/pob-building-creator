@@ -12,7 +12,7 @@ function main() {
 
 function createNodes(tree){
     const nodes = tree["nodes"];
-    var slimTree = {}
+    let slimTree = {}
     for (const [id, node] of Object.entries(nodes)) {
         if ("expansionJewel" in node){
             slimTree[`${id}`] = {

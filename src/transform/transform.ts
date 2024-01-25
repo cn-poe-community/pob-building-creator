@@ -34,7 +34,7 @@ export class Transformer {
         const character = this.itemsData.character;
         build.level = character.level;
 
-        var classIds = getClassId(character.class)!;
+        let classIds = getClassId(character.class)!;
         build.className = getClass(classIds.classId);
         build.ascendClassName = getAscendancy(classIds.classId, classIds.ascendancyId);
 
@@ -125,7 +125,7 @@ export class Transformer {
             spec.sockets.append(socket);
         }
 
-        var classIds = getClassId(character.class);
+        let classIds = getClassId(character.class);
         if (classIds !== undefined) {
             spec.ascendClassId = classIds.ascendancyId;
             spec.classId = classIds.classId;

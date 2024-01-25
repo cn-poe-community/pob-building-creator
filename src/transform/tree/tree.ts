@@ -50,7 +50,7 @@ export function getClassId(name: string): { classId: number; ascendancyId: numbe
 // copy from https://github.com/afq984/void-battery/blob/main/web/pobgen.py
 export function getEncodedTree(char: any, tree: any) {
     const hashes: number[] = tree.hashes;
-    var classIds = getClassId(char.class);
+    let classIds = getClassId(char.class);
     if (classIds === undefined) {
         classIds = { classId: 0, ascendancyId: 0 };
     }
@@ -65,7 +65,7 @@ export function getEncodedTree(char: any, tree: any) {
         head.length + 1 + hashes.length * 2 + 2 + masteryEffects.length * 2
     );
     const view = new DataView(buffer);
-    var offset = 0;
+    let offset = 0;
     for (const n of head) {
         view.setUint8(offset, n);
         offset += 1;
@@ -95,13 +95,13 @@ export function enabledPobNodeIdsOfJewels(hashEx: number[], jewelData: any): num
     // 获取所有jewel，并按照从大到小进行排序
     let jewelList = getSortedJewels(jewelData);
 
-    var hashExSet = new Set(hashEx);
+    let hashExSet = new Set(hashEx);
 
     // 使用skill作为key，关联所在socket的ExpansionJewel
     // id是socket所在星团的POB内部实现细节，供子星团使用
-    var socketExpansionJewels = new Map<number, { id: number; ej: ExpansionJewel }>();
+    let socketExpansionJewels = new Map<number, { id: number; ej: ExpansionJewel }>();
 
-    var enabledPobNodeIds: number[] = [];
+    let enabledPobNodeIds: number[] = [];
 
     for (const jewel of jewelList) {
         const idx = jewel.idx;
@@ -110,47 +110,29 @@ export function enabledPobNodeIdsOfJewels(hashEx: number[], jewelData: any): num
 
         const jewelNodes = data.subgraph.nodes;
 
-        if (size === JEWEL_SIZE_LARGE) {
-            // 大星团只可能位于slot上
-            const slotNodeId = getNodeIdOfSlot(Number(idx));
-            const expansionJewel = treeNodes[slotNodeId].expansionJewel;
+        let id: number | undefined = undefined;
+        let expansionJewel: ExpansionJewel | undefined = undefined;
 
-            enabledPobNodeIds.push(
-                ...enabledPobNodeIdsOfJewel(
-                    hashExSet,
-                    jewel,
-                    expansionJewel,
-                    undefined,
-                    socketExpansionJewels
-                )
-            );
-        } else if (size === JEWEL_SIZE_MEDIUM || size === JEWEL_SIZE_SMALL) {
-            let expansionJewel: ExpansionJewel | undefined = undefined;
-            let id: number | undefined = undefined;
-
-            var socketSkill = getSocketSkill(jewelNodes);
-            // 中小星团优先考虑可能位于socket上
+        // 中小型星团
+        if (size === JEWEL_SIZE_MEDIUM || size === JEWEL_SIZE_SMALL) {
+            let socketSkill = getSocketSkill(jewelNodes);
             const wrapper = socketExpansionJewels.get(Number(socketSkill));
+            //且是（位于socket上）子星团
             if (wrapper !== undefined) {
-                //in socket
                 id = wrapper.id;
                 expansionJewel = wrapper.ej;
-            } else {
-                //in slot
-                const slotNodeId = getNodeIdOfSlot(Number(idx));
-                expansionJewel = treeNodes[slotNodeId].expansionJewel;
             }
-
-            enabledPobNodeIds.push(
-                ...enabledPobNodeIdsOfJewel(
-                    hashExSet,
-                    jewel,
-                    expansionJewel,
-                    id,
-                    socketExpansionJewels
-                )
-            );
         }
+
+        // 大型星团（必然位于slot上）或位于slot上的中小型星团
+        if (id === undefined) {
+            const slotNodeId = getNodeIdOfSlot(Number(idx));
+            expansionJewel = treeNodes[slotNodeId].expansionJewel;
+        }
+
+        enabledPobNodeIds.push(
+            ...enabledPobNodeIdsOfJewel(hashExSet, jewel, expansionJewel, id, socketExpansionJewels)
+        );
     }
 
     return enabledPobNodeIds;
@@ -178,7 +160,7 @@ function getSortedJewels(jewelData: any): { idx: string; data: any; size: string
     return jewelList;
 }
 
-// 返回星团所在slot的NodeId或者所在socket的Skill，即入口node的in
+// 返回星团所在slot的nodeId或者所在socket的skill，即入口node的in
 function getSocketSkill(jewelNodes: {
     [index: string]: { in: string[]; out: string[] };
 }): string | undefined {
@@ -206,7 +188,7 @@ function enabledPobNodeIdsOfJewel(
     id: number | undefined,
     socketEJs: Map<number, { id: number; ej: ExpansionJewel }>
 ): number[] {
-    var enabledPobNodeIds: number[] = [];
+    let enabledPobNodeIds: number[] = [];
 
     const jSize = jewel.size;
     const jMetaOfSize = jewelMetaOfSize(jSize);
@@ -220,7 +202,7 @@ function enabledPobNodeIdsOfJewel(
     } else if (expansionJewel.size == 1) {
         id = id + (expansionJewel.index << 9);
     }
-    var pobNodeIdGenerator = id + (jMetaOfSize.sizeIndex << 4);
+    let pobNodeIdGenerator = id + (jMetaOfSize.sizeIndex << 4);
 
     // 原始nodeId，与hashExSet是一套id体系，最后需要转换为pobNodeId（另一套体系）
     const notableIds: number[] = [];
