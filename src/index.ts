@@ -4,9 +4,7 @@ import Mustache from "mustache";
 
 export function transform(items: any, passiveSkills: any): PathOfBuilding {
     // disable xml/html escape
-    Mustache.escape = function (value) {
-        return value;
-    };
+    Mustache.escape = v => v;
     const t = new Transformer(items, passiveSkills);
     t.transform();
     return t.getBuilding();

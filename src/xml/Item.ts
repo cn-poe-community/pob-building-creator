@@ -1,6 +1,6 @@
 import Mustache from "mustache";
 import { ItemSet } from "./Slot.js";
-import { getFirstNum } from "../common/common.js";
+import { getFirstNum } from "../util/strings.js";
 
 const RARITY_MAP: { [key: string]: string } = {
     0: "NORMAL",
