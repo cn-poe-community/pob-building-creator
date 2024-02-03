@@ -13,15 +13,21 @@ import {
     getNodeIdOfSlot,
 } from "./tree/tree.js";
 
+export type TransformOptions = {
+    skipWeapon2: boolean;
+};
+
 export class Transformer {
     private itemsData: any;
     private passiveSkillsData: any;
     private building?: PathOfBuilding;
     private itemIdGenerator = 1;
+    private options?: TransformOptions;
 
-    constructor(itemsData: any, passiveSkillsData: any) {
+    constructor(itemsData: any, passiveSkillsData: any, options?: TransformOptions) {
         this.itemsData = itemsData;
         this.passiveSkillsData = passiveSkillsData;
+        this.options = options;
     }
 
     public transform(): void {
@@ -104,8 +110,22 @@ export class Transformer {
         const list: any[] = [];
         list.push(
             ...(itemsJson as any[]).filter((item) => {
-                //skip items in package, or thiefs trinket
-                return item.inventoryId !== "MainInventory" && item.baseType !== "THIEFS_TRINKET";
+                switch (item.inventoryId) {
+                    case "Weapon2":
+                    case "Offhand2":
+                        if (this.options?.skipWeapon2) {
+                            return false;
+                        }
+                        break;
+                    case "MainInventory": // item in package
+                    case "ExpandedMainInventory": // item in expanded package
+                        return false;
+                }
+
+                if (item.baseType === "THIEFS_TRINKET") {
+                    return false;
+                }
+                return true;
             })
         );
         return list;
