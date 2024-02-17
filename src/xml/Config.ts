@@ -18,7 +18,7 @@ export class Config {
     // skill
     brandAttachedToEnemy = true; // 烙印附加在敌人身上？
     configResonanceCount = 50; // 三位一体层数
-    // enemy debuff
+    // enemy de-buff
     projectileDistance: number | undefined = undefined; // 投射物飞行距离
     conditionEnemyBlinded: boolean | undefined = undefined; // 敌人被致盲
     overrideBuffBlinded: number | undefined = undefined; // 致盲效果

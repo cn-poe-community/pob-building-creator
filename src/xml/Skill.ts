@@ -1,5 +1,5 @@
 import Mustache from "mustache";
-import { getFirstNum, getFirstNumOrDefault } from "../util/strings.js";
+import { getFirstNumOrDefault } from "../util/strings.js";
 
 export class Skills {
     skillSet = new SkillSet();

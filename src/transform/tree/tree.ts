@@ -1,5 +1,5 @@
 import { Base64 } from "js-base64";
-import { JewelMetaOfSize, treeNodes, jewelMetasOfSize, ExpansionJewel } from "./data.js";
+import { JewelMetaOfSize, treeNodes, jewelMetaOfSizeMap, ExpansionJewel } from "./data.js";
 
 const JEWEL_SLOT_NODE_IDS = [
     26725, 36634, 33989, 41263, 60735, 61834, 31683, 28475, 6230, 48768, 34483, 7960, 46882, 55190,
@@ -14,13 +14,13 @@ export function getNodeIdOfSlot(jewelSlotIdx: number): number {
 }
 
 const CLASSES = [
-    { name: "Scion", ascendancies: ["None", "Ascendant"] },
-    { name: "Marauder", ascendancies: ["None", "Juggernaut", "Berserker", "Chieftain"] },
-    { name: "Ranger", ascendancies: ["None", "Raider", "Deadeye", "Pathfinder"] },
-    { name: "Witch", ascendancies: ["None", "Occultist", "Elementalist", "Necromancer"] },
-    { name: "Duelist", ascendancies: ["None", "Slayer", "Gladiator", "Champion"] },
-    { name: "Templar", ascendancies: ["None", "Inquisitor", "Hierophant", "Guardian"] },
-    { name: "Shadow", ascendancies: ["None", "Assassin", "Trickster", "Saboteur"] },
+    { name: "Scion", ascendancyList: ["None", "Ascendant"] },
+    { name: "Marauder", ascendancyList: ["None", "Juggernaut", "Berserker", "Chieftain"] },
+    { name: "Ranger", ascendancyList: ["None", "Raider", "Deadeye", "Pathfinder"] },
+    { name: "Witch", ascendancyList: ["None", "Occultist", "Elementalist", "Necromancer"] },
+    { name: "Duelist", ascendancyList: ["None", "Slayer", "Gladiator", "Champion"] },
+    { name: "Templar", ascendancyList: ["None", "Inquisitor", "Hierophant", "Guardian"] },
+    { name: "Shadow", ascendancyList: ["None", "Assassin", "Trickster", "Saboteur"] },
 ];
 
 export function getClass(classId: number): string {
@@ -28,7 +28,7 @@ export function getClass(classId: number): string {
 }
 
 export function getAscendancy(classId: number, ascendancyId: number): string {
-    return CLASSES[classId].ascendancies[ascendancyId];
+    return CLASSES[classId].ascendancyList[ascendancyId];
 }
 
 export function getClassId(name: string): { classId: number; ascendancyId: number } | undefined {
@@ -37,9 +37,9 @@ export function getClassId(name: string): { classId: number; ascendancyId: numbe
             return { classId: i, ascendancyId: 0 };
         }
 
-        const ascendancies = CLASSES[i].ascendancies;
-        for (let j = 1; j < ascendancies.length; j++) {
-            if (ascendancies[j] === name) {
+        const ascendancyList = CLASSES[i].ascendancyList;
+        for (let j = 1; j < ascendancyList.length; j++) {
+            if (ascendancyList[j] === name) {
                 return { classId: i, ascendancyId: j };
             }
         }
@@ -214,15 +214,15 @@ function enabledPobNodeIdsOfJewel(
     const nodeIds: number[] = group.nodes;
     const jewelNodes = jewel.data.subgraph.nodes;
     for (const i of nodeIds) {
-        const jnode = jewelNodes[i];
+        const jNode = jewelNodes[i];
         const nodeId = Number(i);
-        if (jnode.isNotable) {
+        if (jNode.isNotable) {
             notableIds.push(nodeId);
-        } else if (jnode.isJewelSocket) {
+        } else if (jNode.isJewelSocket) {
             socketIds.push(nodeId);
-            socketEJs.set(Number(jnode.skill), { id: id, ej: jnode.expansionJewel });
-        } else if (jnode.isMastery) {
-        } else if (jnode.isKeystone) {
+            socketEJs.set(Number(jNode.skill), { id: id, ej: jNode.expansionJewel });
+        } else if (jNode.isMastery) {
+        } else if (jNode.isKeystone) {
             keystoneIds.push(nodeId);
         } else {
             smallIds.push(nodeId);
@@ -240,8 +240,8 @@ function enabledPobNodeIdsOfJewel(
     } else {
         for (let i = 0; i < socketIds.length; i++) {
             const nodeId = socketIds[i];
-            const indicy = jMetaOfSize.socketIndicies[i];
-            indicies.set(indicy, nodeId);
+            const indicie = jMetaOfSize.socketIndicies[i];
+            indicies.set(indicie, nodeId);
         }
     }
 
@@ -303,13 +303,13 @@ function enabledPobNodeIdsOfJewel(
         indicies.set(smallIndicies[i], smallIds[i]);
     }
 
-    for (const [indicy, nodeId] of indicies.entries()) {
+    for (const [indicie, nodeId] of indicies.entries()) {
         if (hashExSet.has(nodeId)) {
             const node = jewelNodes[nodeId];
             if (node.isJewelSocket) {
                 enabledPobNodeIds.push(Number(node.skill));
             } else {
-                enabledPobNodeIds.push(pobNodeIdGenerator + indicy);
+                enabledPobNodeIds.push(pobNodeIdGenerator + indicie);
             }
         }
     }
@@ -338,10 +338,10 @@ function jewelSize(type: string): string {
 
 function jewelMetaOfSize(size: string): JewelMetaOfSize {
     if (size === JEWEL_SIZE_LARGE) {
-        return jewelMetasOfSize.large;
+        return jewelMetaOfSizeMap.large;
     } else if (size === JEWEL_SIZE_MEDIUM) {
-        return jewelMetasOfSize.medium;
+        return jewelMetaOfSizeMap.medium;
     } else {
-        return jewelMetasOfSize.small;
+        return jewelMetaOfSizeMap.small;
     }
 }

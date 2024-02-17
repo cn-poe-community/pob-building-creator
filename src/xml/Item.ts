@@ -11,7 +11,7 @@ const RARITY_MAP: { [key: string]: string } = {
     10: "RELIC",
 };
 
-function toPobRariy(frameType: number) {
+function toPobRarity(frameType: number) {
     return RARITY_MAP[frameType];
 }
 
@@ -37,7 +37,7 @@ export class Item {
         const model: any = {};
         const json = this.json;
 
-        model.rarity = toPobRariy(this.json.frameType);
+        model.rarity = toPobRarity(this.json.frameType);
 
         model.name = json.name;
         model.baseType = json.baseType;
@@ -67,7 +67,7 @@ export class Item {
         model.quality = getFirstNum(qualityText);
         model.evasionRating = propMap.get("Evasion Rating")?.values[0][0];
         model.energyShield = propMap.get("Energy Shield")?.values[0][0];
-        model.armout = propMap.get("Armour")?.values[0][0];
+        model.armour = propMap.get("Armour")?.values[0][0];
         model.ward = propMap.get("Ward")?.values[0][0];
         model.radius = propMap.get("Radius")?.values[0][0];
         model.limitedTo = propMap.get("Limited to")?.values[0][0];
@@ -138,9 +138,9 @@ Evasion: {{evasionRating}}
 {{#energyShield}}
 Energy Shield: {{energyShield}}
 {{/energyShield}}
-{{#armout}}
-Armour: {{armout}}
-{{/armout}}
+{{#armour}}
+Armour: {{armour}}
+{{/armour}}
 {{#ward}}
 Ward: {{ward}}
 {{/ward}}

@@ -55,7 +55,7 @@ export type ExpansionJewel = {
     parent?: string;
 };
 
-export const jewelMetasOfSize = {
+export const jewelMetaOfSizeMap = {
     small: {
         sizeIndex: 0,
         notableIndicies: [4],
