@@ -138,6 +138,7 @@ export function enabledPobNodeIdsOfJewels(hashEx: number[], jewelData: any): num
     return enabledPobNodeIds;
 }
 
+// sort jewels order by size( LARGE > MEDIUM > SMALL ) desc
 function getSortedJewels(jewelData: any): { idx: string; data: any; size: string }[] {
     const jewelList: { idx: string; data: any; size: string }[] = [];
     for (const [idx, data] of Object.entries<any>(jewelData)) {
@@ -148,13 +149,15 @@ function getSortedJewels(jewelData: any): { idx: string; data: any; size: string
     }
 
     jewelList.sort((a, b) => {
-        // "LARGE"<"MEDIUM"<"SMALL", but LARGE > MEDIUM > SMALL
-        if (a === b) {
+        // "LARGE"<"MEDIUM"<"SMALL"
+        const sizeA = a.size;
+        const sizeB = b.size;
+        if (sizeA === sizeB) {
             return 0;
-        } else if (a > b) {
-            return -1;
-        } else {
+        } else if (sizeA > sizeB) {
             return 1;
+        } else {
+            return -1;
         }
     });
     return jewelList;
