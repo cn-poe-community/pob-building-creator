@@ -12,7 +12,7 @@ export default [
     plugins: [typescript(), nodeResolve()],
   },
   {
-    input: "src/index.global.ts",
+    input: "src/index.ts",
     output: {
       file: "dist/creater.global.js",
       format: "iife",
