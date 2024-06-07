@@ -7,7 +7,7 @@ export class Config {
     useFrenzyCharges: boolean | undefined = undefined; // 狂怒球
     usePowerCharges: boolean | undefined = undefined; // 暴击球
     useEnduranceCharges: boolean | undefined = undefined; // 耐力球
-    multiplierGaleForce: number = 10; // 飓风之力层数
+    multiplierGaleForce: number | undefined = undefined; // 飓风之力层数
     buffOnslaught: boolean | undefined = undefined; // 猛攻
     buffArcaneSurge: boolean | undefined = undefined; // 秘术增强
     buffUnholyMight: boolean | undefined = undefined; // 不洁之力
@@ -16,8 +16,8 @@ export class Config {
     buffAdrenaline: boolean | undefined = undefined; // 肾上腺素
     conditionOnConsecratedGround: boolean | undefined = undefined; // 你在奉献地面上？
     // skill
-    brandAttachedToEnemy = true; // 烙印附加在敌人身上？
-    configResonanceCount = 50; // 三位一体层数
+    brandAttachedToEnemy: boolean | undefined = undefined; // 烙印附加在敌人身上？
+    configResonanceCount: number | undefined = undefined; // 三位一体层数
     // enemy de-buff
     projectileDistance: number | undefined = undefined; // 投射物飞行距离
     conditionEnemyBlinded: boolean | undefined = undefined; // 敌人被致盲
