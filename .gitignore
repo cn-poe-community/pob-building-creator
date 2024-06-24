@@ -1,4 +1,7 @@
 dist/
 node_modules/
 building.xml
-tools/tree.json
+scripts/tree.json
+scripts/tree.ts
+scripts/gems.json
+scripts/gem.ts

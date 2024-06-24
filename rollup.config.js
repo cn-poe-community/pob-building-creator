@@ -14,9 +14,9 @@ export default [
   {
     input: "src/index.ts",
     output: {
-      file: "dist/creater.global.js",
+      file: "dist/creator.global.js",
       format: "iife",
-      name: "BuildingCreater",
+      name: "BuildingCreator",
     },
     plugins: [typescript(), nodeResolve(), terser()],
   },
