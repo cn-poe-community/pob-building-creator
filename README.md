@@ -3,11 +3,11 @@ Create [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuildin
 
 # Usage
 ```
-npm install pob-building-creater
+npm install pob-building-creator
 ```
 Create building:
 ```ts
-import {transform} from "pob-building-creater";
+import {transform} from "pob-building-creator";
 const items = {};// You should get items from poe api
 const passiveSkills = {};// You should get passive skills from poe api
 const pob = transform(items, passiveSkills);
