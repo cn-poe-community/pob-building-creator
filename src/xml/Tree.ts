@@ -105,24 +105,15 @@ export class Overrides {
 
 export class Override {
     dn: string;
-    icon: string;
     nodeId: string;
-    activeEffectImage: string;
-    stats: string[];
 
     constructor(nodeId: string, json: any) {
         this.dn = json.name;
-        this.icon = json.icon;
         this.nodeId = nodeId;
-        this.activeEffectImage = json.activeEffectImage;
-        this.stats = json.stats;
     }
 
     public toString(): string {
-        const tmpl = `<Override dn="${this.dn}" icon="${this.icon}" nodeId="${this.nodeId}" activeEffectImage="${this.activeEffectImage}">
-{{#stats}}
-{{.}}
-{{/stats}}
+        const tmpl = `<Override dn="${this.dn}" nodeId="${this.nodeId}">
 </Override>`;
 
         return Mustache.render(tmpl, this);
