@@ -64,13 +64,12 @@ export class Gem {
         this.level = getFirstNumOrDefault(propMap.get("Level")?.values[0][0], 20);
         this.quality = getFirstNumOrDefault(propMap.get("Quality")?.values[0][0], 0);
 
+        this.nameSpec = json.baseType.replace(" Support", "");
         if (json.hybrid && json.hybrid.isVaalGem) {
             let hybridBaseTypeName = json.hybrid.baseTypeName;
             if (isTransfiguredGem(hybridBaseTypeName)) {
                 this.nameSpec = this.nameSpecOfVaalTransfiguredGem(hybridBaseTypeName);
             }
-        } else {
-            this.nameSpec = json.baseType.replace(" Support", "");
         }
 
         if (this.isVaalGem()) {
