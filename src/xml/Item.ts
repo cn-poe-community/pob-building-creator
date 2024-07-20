@@ -22,6 +22,7 @@ const ITEM_NAME_MAP: { [key: string]: string } = {
 
 const BASE_TYPE_MAP: { [key: string]: string } = {
     "Maelström Staff": "Maelstrom Staff",
+    "Energy Blade": "Energy Blade One Handed",
 };
 
 export class Item {
