@@ -17,7 +17,7 @@ function toPobRarity(frameType: number) {
 
 const ITEM_NAME_MAP: { [key: string]: string } = {
     "Doppelgänger Guise": "Doppelganger Guise",
-    Mjölner: "Mjolner",
+    "Mjölner": "Mjolner",
 };
 
 const BASE_TYPE_MAP: { [key: string]: string } = {

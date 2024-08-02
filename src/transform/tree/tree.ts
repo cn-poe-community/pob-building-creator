@@ -16,7 +16,7 @@ export function getNodeIdOfSlot(jewelSlotIdx: number): number {
 const CLASSES = [
     { name: "Scion", ascendancyList: ["None", "Ascendant"] },
     { name: "Marauder", ascendancyList: ["None", "Juggernaut", "Berserker", "Chieftain"] },
-    { name: "Ranger", ascendancyList: ["None", "Raider", "Deadeye", "Pathfinder"] },
+    { name: "Ranger", ascendancyList: ["None", "Warden", "Deadeye", "Pathfinder"] },
     { name: "Witch", ascendancyList: ["None", "Occultist", "Elementalist", "Necromancer"] },
     { name: "Duelist", ascendancyList: ["None", "Slayer", "Gladiator", "Champion"] },
     { name: "Templar", ascendancyList: ["None", "Inquisitor", "Hierophant", "Guardian"] },
