@@ -18,7 +18,7 @@ function printTransfiguredGems(gems) {
             transfiguredGems.push(gem.en);
         }
     }
-    console.log(`const transfiguredGems: string[] = [
+    console.log(`export const transfiguredGems: string[] = [
     ${transfiguredGems.map((v) => `"${v}"`).join(", ")}
 ];`);
 }
