@@ -6,11 +6,11 @@ import { Slot } from "../xml/Slot.js";
 import { Skill } from "../xml/Skill.js";
 import { MasteryEffect, Socket } from "../xml/Tree.js";
 import {
-    enabledPobNodeIdsOfJewels,
+    getEnabledNodeIdsOfJewels,
     getAscendancy,
     getClass,
     getClassId,
-    getNodeIdOfSlot,
+    getNodeIdOfExpansionSlot,
 } from "./tree/tree.js";
 
 export type TransformOptions = {
@@ -141,7 +141,7 @@ export class Transformer {
             const item = new Item(this.itemIdGenerator++, itemData);
             itemList.push(item);
 
-            const socket = new Socket(getNodeIdOfSlot(itemData.x), item.id);
+            const socket = new Socket(getNodeIdOfExpansionSlot(itemData.x), item.id);
             spec.sockets.append(socket);
         }
 
@@ -161,12 +161,7 @@ export class Transformer {
 
         spec.nodes = this.passiveSkillsData.hashes;
 
-        spec.nodes.push(
-            ...enabledPobNodeIdsOfJewels(
-                this.passiveSkillsData.hashes_ex,
-                this.passiveSkillsData.jewel_data
-            )
-        );
+        spec.nodes.push(...getEnabledNodeIdsOfJewels(this.passiveSkillsData));
 
         spec.overrides.parse(this.passiveSkillsData.skill_overrides);
     }

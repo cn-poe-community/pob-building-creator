@@ -7,21 +7,41 @@ import tree from "./tree.json" assert  { type: "json" };
 // 注意，powershell下生成文件的编码是UTF-16
 
 function main() {
-    createNodes(tree);
+    createTree(tree);
 }
 
-function createNodes(tree) {
+function createTree(tree) {
     const nodes = tree["nodes"];
-    let slimTree = {}
+    let slimTree = { "nodes": {},"constants": {}};
+    const proxyNodeIdSet = new Set();
     for (const [id, node] of Object.entries(nodes)) {
         if ("expansionJewel" in node) {
-            slimTree[`${id}`] = {
-                "expansionJewel": node["expansionJewel"]
+            const expansionJewel = node["expansionJewel"];
+            if (expansionJewel === undefined) {
+                print(id);
+                continue;
+            }
+            slimTree.nodes[`${id}`] = {
+                "expansionJewel": expansionJewel,
+                "orbit": node["orbit"],
+                "orbitIndex": node["orbitIndex"]
+            }
+            proxyNodeIdSet.add(expansionJewel["proxy"]);
+        }
+    }
+
+    for (const [id, node] of Object.entries(nodes)) {
+        if (proxyNodeIdSet.has(id)) {
+            slimTree.nodes[`${id}`] = {
+                "orbit": node["orbit"],
+                "orbitIndex": node["orbitIndex"]
             }
         }
     }
 
-    console.log("export const treeNodes:{[index: number]: Node;} =");
+    slimTree.constants = tree.constants;
+
+    console.log("export const TREE: Tree = ");
     console.log(JSON.stringify(slimTree), ";");
 }
 
