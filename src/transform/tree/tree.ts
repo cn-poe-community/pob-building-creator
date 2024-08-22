@@ -83,7 +83,7 @@ export function getEncodedTree(char: any, tree: any) {
         offset += 2;
     }
 
-    let code = Base64.fromUint8Array(new Uint8Array(buffer));
+    const code = Base64.fromUint8Array(new Uint8Array(buffer));
     return code.replaceAll("+", "-").replaceAll("/", "_");
 }
 
@@ -108,7 +108,7 @@ export function getEnabledNodeIdsOfJewels(passiveSkills: any): number[] {
 
     const hashExSet = new Set<number>(hashEx);
 
-    // 使用skill作为key，关联所在socket的ExpansionJewel
+    // 使用proxy作为key，关联所在socket的ExpansionJewel
     // id是socket所在星团的POB内部实现细节，供子星团使用
     const socketExpansionJewels = new Map<number, { id: number; ej: ExpansionJewel }>();
 
@@ -130,8 +130,8 @@ export function getEnabledNodeIdsOfJewels(passiveSkills: any): number[] {
 
         // 中小型星团
         if (size === CLUSTER_JEWEL_SIZE_MEDIUM || size === CLUSTER_JEWEL_SIZE_SMALL) {
-            let socketSkill = getSocketSkill(jewelNodes);
-            const idAndEj = socketExpansionJewels.get(Number(socketSkill));
+            const proxy = jewel.data.subgraph.groups[`expansion_${seqNum}`].proxy;
+            const idAndEj = socketExpansionJewels.get(Number(proxy));
             //且是（位于socket上）子星团
             if (idAndEj !== undefined) {
                 id = idAndEj.id;
@@ -199,25 +199,6 @@ function getSortedJewels(
     return jewelList;
 }
 
-// 返回星团所在slot的nodeId或者所在socket的skill，即入口node的in
-function getSocketSkill(jewelNodes: {
-    [index: string]: { in: string[]; out: string[] };
-}): string | undefined {
-    for (const [_, node] of Object.entries<any>(jewelNodes)) {
-        let inNodeId: string | undefined = undefined;
-        if (node.in.length > 0) {
-            inNodeId = node.in[0];
-        }
-
-        if (inNodeId !== undefined) {
-            if (!(inNodeId in jewelNodes)) {
-                return inNodeId;
-            }
-        }
-    }
-    return undefined;
-}
-
 interface ClusterJewelNode {
     id: number; // nodeId
     oIdx: number; // 局部序号，指使用0~11标记单个星团中的节点
@@ -247,7 +228,7 @@ function getEnabledNodeIdsOfJewel(
     } else if (expansionJewel.size == 1) {
         id = id + (expansionJewel.index << 9);
     }
-    let nodeIdGenerator = id + (jMeta.sizeIndex << 4);
+    const nodeIdGenerator = id + (jMeta.sizeIndex << 4);
 
     // 原始的id，最终需要转换为nodeId
     const notableIds: number[] = [];
@@ -270,15 +251,15 @@ function getEnabledNodeIdsOfJewel(
 
     for (const i of originalNodeIds) {
         const node = jewelNodes[i];
-        const id = Number(i);
+        const originalId = Number(i);
         if (node.isNotable) {
-            notableIds.push(id);
+            notableIds.push(originalId);
         } else if (node.isJewelSocket) {
-            socketIds.push(id);
-            socketEjs.set(Number(node.skill), { id: id, ej: node.expansionJewel });
+            socketIds.push(originalId);
+            socketEjs.set(Number(node.expansionJewel.proxy), { id, ej: node.expansionJewel });
         } else if (node.isMastery) {
         } else {
-            smallIds.push(id);
+            smallIds.push(originalId);
         }
     }
 
@@ -379,7 +360,7 @@ function getEnabledNodeIdsOfJewel(
 
     const proxyNode = TREE.nodes[Number(expansionJewel.proxy)];
     const proxyNodeSkillsPerOrbit = TREE.constants.skillsPerOrbit[proxyNode.orbit];
-    for (let node of pobJewelNodes) {
+    for (const node of pobJewelNodes) {
         const proxyNodeOidxRelativeToClusterIndicies = translateOidx(
             proxyNode.orbitIndex,
             proxyNodeSkillsPerOrbit,
