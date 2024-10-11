@@ -20,9 +20,11 @@ const ITEM_NAME_MAP: { [key: string]: string } = {
     Mjölner: "Mjolner",
 };
 
+const POB_BASE_TYPE_ENERGY_BLADE = "Energy Blade One Handed";
+
 const BASE_TYPE_MAP: { [key: string]: string } = {
     "Maelström Staff": "Maelstrom Staff",
-    "Energy Blade": "Energy Blade One Handed",
+    "Energy Blade": POB_BASE_TYPE_ENERGY_BLADE,
 };
 
 export class Item {
@@ -43,15 +45,16 @@ export class Item {
         model.name = json.name;
         model.baseType = json.baseType;
         model.typeLine = json.typeLine;
-        if (json.name) {
-            if (ITEM_NAME_MAP[json.name]) {
-                model.name = ITEM_NAME_MAP[json.name];
-            }
-            if (BASE_TYPE_MAP[json.baseType]) {
-                model.baseType = BASE_TYPE_MAP[json.baseType];
-            }
-        } else {
-            const typeLine: string = json.typeLine;
+
+        if (ITEM_NAME_MAP[model.name]) {
+            model.name = ITEM_NAME_MAP[model.name];
+        }
+        if (BASE_TYPE_MAP[model.baseType]) {
+            model.baseType = BASE_TYPE_MAP[model.baseType];
+        }
+
+        if (model.name === "") {
+            const typeLine: string = model.typeLine;
             for (let baseType in BASE_TYPE_MAP) {
                 if (typeLine.includes(baseType)) {
                     model.typeLine = typeLine.replace(baseType, BASE_TYPE_MAP[baseType]);
@@ -90,15 +93,29 @@ export class Item {
             .flat();
         model.crucibleMods = (json.crucibleMods as string[])?.map((mod) => mod.split("\n")).flat();
 
+        let abyssalSocketCount = 0;
         if (json.sockets) {
             const arr = json.sockets as any[];
-            const buf = [arr[0].sColour];
-            for (let i = 1; i < arr.length; i++) {
-                buf.push(arr[i].group === arr[i - 1].group ? "-" : " ");
-                buf.push(arr[i].sColour);
+            const builder = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (i > 0) {
+                    builder.push(arr[i].group === arr[i - 1].group ? "-" : " ");
+                }
+                const color = arr[i].sColour;
+                builder.push(color);
+                if (color === "A") {
+                    abyssalSocketCount++;
+                }
             }
 
-            model.sockets = buf.join("");
+            model.sockets = builder.join("");
+        }
+
+        if (model.baseType === POB_BASE_TYPE_ENERGY_BLADE) {
+            model.implicitMods = undefined;
+            if (abyssalSocketCount > 0) {
+                model.explicitMods = [`Has ${abyssalSocketCount} Abyssal Sockets`];
+            }
         }
 
         let implicitCount = 0;
