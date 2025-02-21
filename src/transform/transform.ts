@@ -6,11 +6,10 @@ import { Slot } from "../xml/Slot.js";
 import { Skill } from "../xml/Skill.js";
 import { MasteryEffect, Socket } from "../xml/Tree.js";
 import {
+    getClassNameAndAscendancyName,
     getEnabledNodeIdsOfJewels,
-    getAscendancy,
-    getClass,
-    getClassId,
     getNodeIdOfExpansionSlot,
+    isPhreciaAscendancy,
 } from "./tree/tree.js";
 
 export type TransformOptions = {
@@ -40,9 +39,9 @@ export class Transformer {
         const character = this.itemsData.character;
         build.level = character.level;
 
-        let classIds = getClassId(character.class)!;
-        build.className = getClass(classIds.classId);
-        build.ascendClassName = getAscendancy(classIds.classId, classIds.ascendancyId);
+        const names = getClassNameAndAscendancyName(this.itemsData.character.class);
+        build.className = names[0];
+        build.ascendClassName = names[1];
 
         // parse json
         this.parseItems();
@@ -145,13 +144,16 @@ export class Transformer {
             spec.sockets.append(socket);
         }
 
-        let classIds = getClassId(character.class);
-        if (classIds !== undefined) {
-            spec.ascendClassId = classIds.ascendancyId;
-            spec.classId = classIds.classId;
-        }
+        spec.classId = this.passiveSkillsData.character;
+        spec.ascendClassId = this.passiveSkillsData.ascendancy;
 
         spec.secondaryAscendClassId = this.passiveSkillsData.alternate_ascendancy;
+
+        if (isPhreciaAscendancy(character.class)) {
+            spec.treeVersion = "3_25_alternate";
+        } else {
+            spec.treeVersion = "3_25";
+        }
 
         for (const [node, effect] of Object.entries<number>(
             this.passiveSkillsData.mastery_effects

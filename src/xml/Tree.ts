@@ -10,7 +10,7 @@ ${this.spec}
 }
 
 export class Spec {
-    treeVersion = "3_25";
+    treeVersion = "";
     ascendClassId = 0;
     secondaryAscendClassId = 0;
     classId = 0;

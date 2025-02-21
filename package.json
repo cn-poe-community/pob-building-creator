@@ -1,6 +1,6 @@
 {
   "name": "pob-building-creator",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",

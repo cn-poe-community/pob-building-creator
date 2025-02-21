@@ -42,7 +42,7 @@ function createTree(tree) {
     slimTree.constants = tree.constants;
 
     console.log("export const TREE: Tree = ");
-    console.log(JSON.stringify(slimTree), ";");
+    console.log(JSON.stringify(slimTree,null,2), ";");
 }
 
 main()

@@ -14,47 +14,77 @@ export function getNodeIdOfExpansionSlot(seqNum: number): number {
 }
 
 const CLASSES = [
-    { name: "Scion", ascendancyList: ["None", "Ascendant"] },
-    { name: "Marauder", ascendancyList: ["None", "Juggernaut", "Berserker", "Chieftain"] },
-    { name: "Ranger", ascendancyList: ["None", "Warden", "Deadeye", "Pathfinder"] },
-    { name: "Witch", ascendancyList: ["None", "Occultist", "Elementalist", "Necromancer"] },
-    { name: "Duelist", ascendancyList: ["None", "Slayer", "Gladiator", "Champion"] },
-    { name: "Templar", ascendancyList: ["None", "Inquisitor", "Hierophant", "Guardian"] },
-    { name: "Shadow", ascendancyList: ["None", "Assassin", "Trickster", "Saboteur"] },
+    {
+        name: "Scion",
+        ascendancyList: ["None", "Ascendant"],
+        phreciaAscendancyList: ["None", "Scavenger"],
+    },
+    {
+        name: "Marauder",
+        ascendancyList: ["None", "Juggernaut", "Berserker", "Chieftain"],
+        phreciaAscendancyList: ["None", "Ancestral Commander", "Behemoth", "Antiquarian"],
+    },
+    {
+        name: "Ranger",
+        ascendancyList: ["None", "Warden", "Deadeye", "Pathfinder"],
+        phreciaAscendancyList: ["None", "Wildspeaker", "Whisperer", "Daughter of Oshabi"],
+    },
+    {
+        name: "Witch",
+        ascendancyList: ["None", "Occultist", "Elementalist", "Necromancer"],
+        phreciaAscendancyList: ["None", "Harbinger", "Herald", "Bog Shaman"],
+    },
+    {
+        name: "Duelist",
+        ascendancyList: ["None", "Slayer", "Gladiator", "Champion"],
+        phreciaAscendancyList: ["None", "Aristocrat", "Gambler", "Paladin"],
+    },
+    {
+        name: "Templar",
+        ascendancyList: ["None", "Inquisitor", "Hierophant", "Guardian"],
+        phreciaAscendancyList: ["None", "Architect of Chaos", "Puppeteer", "Polytheist"],
+    },
+    {
+        name: "Shadow",
+        ascendancyList: ["None", "Assassin", "Trickster", "Saboteur"],
+        phreciaAscendancyList: ["None", "Servant of Arakaali", "Blind Prophet", "Surfcaster"],
+    },
 ];
 
-export function getClass(classId: number): string {
-    return CLASSES[classId].name;
-}
-
-export function getAscendancy(classId: number, ascendancyId: number): string {
-    return CLASSES[classId].ascendancyList[ascendancyId];
-}
-
-export function getClassId(name: string): { classId: number; ascendancyId: number } | undefined {
-    for (let i = 0; i < CLASSES.length; i++) {
-        if (CLASSES[i].name === name) {
-            return { classId: i, ascendancyId: 0 };
+export function getClassNameAndAscendancyName(characterClass: string): [string, string] {
+    for (const classData of CLASSES) {
+        if (classData.name === characterClass) {
+            return [classData.name, "None"];
         }
-
-        const ascendancyList = CLASSES[i].ascendancyList;
-        for (let j = 1; j < ascendancyList.length; j++) {
-            if (ascendancyList[j] === name) {
-                return { classId: i, ascendancyId: j };
+        for (const ascendancy of classData.ascendancyList) {
+            if (ascendancy === characterClass) {
+                return [classData.name, characterClass];
+            }
+        }
+        for (const ascendancy of classData.phreciaAscendancyList) {
+            if (ascendancy === characterClass) {
+                return [classData.name, characterClass];
             }
         }
     }
-    return undefined;
+    return ["", ""];
+}
+
+export function isPhreciaAscendancy(characterClass: string): boolean {
+    for (const classData of CLASSES) {
+        for (const ascendancy of classData.phreciaAscendancyList) {
+            if (ascendancy === characterClass) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 // copy from https://github.com/afq984/void-battery/blob/main/web/pobgen.py
 export function getEncodedTree(char: any, tree: any) {
     const hashes: number[] = tree.hashes;
-    let classIds = getClassId(char.class);
-    if (classIds === undefined) {
-        classIds = { classId: 0, ascendancyId: 0 };
-    }
-    const head: number[] = [0, 0, 0, 6, classIds.classId, classIds.ascendancyId];
+    const head: number[] = [0, 0, 0, 6, tree.character, tree.ascendancy];
     const masteryEffects: number[] = [];
     for (const [node, effect] of Object.entries<number>(tree.mastery_effects)) {
         masteryEffects.push(effect);

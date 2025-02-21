@@ -14,7 +14,7 @@ const pob = transform(items, passiveSkills);
 console.log(pob);
 ```
 
-# Reference Projects
+# Credits
 
 - [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuilding) A great tool of POE.
-- [void-battery](https://github.com/afq984/void-battery) A building exporter of TW POE. this project learns a lot from it.
+- [void-battery](https://github.com/afq984/void-battery) A building exporter of POE TW Server.
