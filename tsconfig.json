@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2016",
     "lib": ["ESNext"],
-    "module": "nodenext",
-    "moduleResolution":"nodenext",
+    "module": "NodeNext",
+    "moduleResolution":"NodeNext",
     "resolveJsonModule": true,
     "declaration": true,
     "outDir": "dist",
