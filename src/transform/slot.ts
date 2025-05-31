@@ -1,3 +1,5 @@
+import { ItemTypes } from "pathofexile-api-types";
+
 const SLOT_MAP: { [key: string]: string } = {
     Amulet: "Amulet",
     Belt: "Belt",
@@ -13,7 +15,7 @@ const SLOT_MAP: { [key: string]: string } = {
     Weapon2: "Weapon 1 Swap",
 };
 
-export function getSlotName(itemData: any) {
+export function getSlotName(itemData: ItemTypes.EquippedItem) {
     const inventoryId = itemData.inventoryId;
     if (inventoryId === "Flask") {
         return `Flask ${itemData.x + 1}`;

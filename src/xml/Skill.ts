@@ -1,6 +1,7 @@
 import Mustache from "mustache";
 import { getFirstNumOrDefault } from "../util/strings.js";
 import { isTransfiguredGem } from "../transform/gem/gem.js";
+import { ItemTypes } from "pathofexile-api-types";
 
 export class Skills {
     skillSet = new SkillSet();
@@ -31,10 +32,10 @@ export class Skill {
     slot = "";
     gems: Gem[] = [];
 
-    constructor(slotName: string, json: any[]) {
+    constructor(slotName: string, jsonList: ItemTypes.SocketedGem[]) {
         this.slot = slotName;
-        for (const gemJson of json) {
-            this.gems.push(new Gem(gemJson));
+        for (const json of jsonList) {
+            this.gems.push(new Gem(json));
         }
     }
 
@@ -56,13 +57,18 @@ export class Gem {
     enableGlobal1 = true;
     enableGlobal2 = false;
 
-    constructor(json: any) {
-        const propMap = new Map<string, any>();
+    constructor(json: ItemTypes.SocketedGem) {
+        const propMap = new Map<string, ItemTypes.Property>();
         if (json.properties) {
-            (json.properties as any[]).forEach((prop) => propMap.set(prop.name, prop));
+            json.properties.forEach((prop) => propMap.set(prop.name, prop));
         }
         this.level = getFirstNumOrDefault(propMap.get("Level")?.values[0][0], 20);
-        this.quality = getFirstNumOrDefault(propMap.get("Quality")?.values[0][0], 0);
+        try {
+            this.quality = getFirstNumOrDefault(propMap.get("Quality")?.values[0][0], 0);
+        } catch (e) {
+            console.log(json);
+            throw e;
+        }
 
         this.nameSpec = json.baseType.replace(" Support", "");
         if (json.hybrid && json.hybrid.isVaalGem) {

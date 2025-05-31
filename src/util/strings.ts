@@ -1,18 +1,17 @@
 export function getFirstNum(text: string): number | undefined {
     //text likes + 20%, return 20
-    if (text) {
-        const matched = text.match(/\d+/g);
-        if (matched) {
-            return Number(matched[0]);
-        }
+    const matched = text.match(/\d+/g);
+    if (matched) {
+        return Number(matched[0]);
     }
     return undefined;
 }
 
-export function getFirstNumOrDefault(text: string, def: number): number {
-    let result = getFirstNum(text);
-    if (!result) {
-        result = def;
+export function getFirstNumOrDefault(text: string | undefined, def: number): number {
+    if (!text) {
+        return def;
     }
-    return result;
+
+    let result = getFirstNum(text);
+    return result !== undefined ? result : def;
 }

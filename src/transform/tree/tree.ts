@@ -1,5 +1,6 @@
 import { Base64 } from "js-base64";
 import { ClusterJewelMeta, TREE, CLUSTER_JEWEL_META_MAP, ExpansionJewel } from "./data.js";
+import { PassiveSkillTypes } from "pathofexile-api-types";
 
 const EXPANSION_SLOT_NODE_IDS = [
     26725, 36634, 33989, 41263, 60735, 61834, 31683, 28475, 6230, 48768, 34483, 7960, 46882, 55190,
@@ -82,7 +83,7 @@ export function isPhreciaAscendancy(characterClass: string): boolean {
 }
 
 // copy from https://github.com/afq984/void-battery/blob/main/web/pobgen.py
-export function getEncodedTree(char: any, tree: any) {
+export function getEncodedTree(tree: PassiveSkillTypes.GetPassiveSkillsResult) {
     const hashes: number[] = tree.hashes;
     const head: number[] = [0, 0, 0, 6, tree.character, tree.ascendancy];
     const masteryEffects: number[] = [];
@@ -128,13 +129,15 @@ export function getEncodedTree(char: any, tree: any) {
 // 这里采用如下定义：
 // slot为天赋树上的原生插槽，socket为星团珠宝提供的扩展插槽，但在少量情况下这两者会混用
 //
-export function getEnabledNodeIdsOfJewels(passiveSkills: any): number[] {
+export function getEnabledNodeIdsOfJewels(
+    passiveSkills: PassiveSkillTypes.GetPassiveSkillsResult
+): number[] {
     const hashEx = passiveSkills.hashes_ex;
     const jewelData = passiveSkills.jewel_data;
     const items = passiveSkills.items;
 
     // 获取所有jewel，并按照从大到小进行排序
-    const jewelList = getSortedJewels(jewelData, items);
+    const jewelList = getSortedClusterJewels(jewelData, items);
 
     const hashExSet = new Set<number>(hashEx);
 
@@ -196,21 +199,36 @@ export function getEnabledNodeIdsOfJewels(passiveSkills: any): number[] {
 }
 
 // sort jewels order by size( LARGE > MEDIUM > SMALL ) desc
-function getSortedJewels(
-    jewelData: any,
-    items: any
-): { seqNum: number; item: any; data: any; size: string }[] {
-    const itemIdx = new Map<number, any>();
+function getSortedClusterJewels(
+    jewelData: PassiveSkillTypes.JewelData,
+    items: PassiveSkillTypes.PassiveItem[]
+): {
+    seqNum: number;
+    item: PassiveSkillTypes.PassiveItem;
+    data: PassiveSkillTypes.ClusterJewelDatum;
+    size: string;
+}[] {
+    const itemIdx = new Map<number, PassiveSkillTypes.PassiveItem>();
     for (const item of items) {
         itemIdx.set(item.x, item);
     }
 
-    const jewelList: { seqNum: number; item: any; data: any; size: string }[] = [];
-    for (const [i, data] of Object.entries<any>(jewelData)) {
+    const jewelList: {
+        seqNum: number;
+        item: PassiveSkillTypes.PassiveItem;
+        data: PassiveSkillTypes.ClusterJewelDatum;
+        size: string;
+    }[] = [];
+    for (const [i, data] of Object.entries<PassiveSkillTypes.JewelDatum>(jewelData)) {
         const seqNum = Number(i);
         const size = clusterJewelSize(data.type);
-        if (size !== "") {
-            jewelList.push({ seqNum, item: itemIdx.get(seqNum), data, size });
+        if (size !== undefined) {
+            jewelList.push({
+                seqNum,
+                item: itemIdx.get(seqNum)!,
+                data: data as PassiveSkillTypes.ClusterJewelDatum,
+                size,
+            });
         }
     }
 
@@ -238,7 +256,12 @@ interface ClusterJewelNode {
 // socketEjs用于返回填充数据，供子星团使用
 function getEnabledNodeIdsOfJewel(
     hashExSet: Set<number>,
-    jewel: { seqNum: number; item: any; data: any; size: string },
+    jewel: {
+        seqNum: number;
+        item: PassiveSkillTypes.PassiveItem;
+        data: PassiveSkillTypes.ClusterJewelDatum;
+        size: string;
+    },
     expansionJewel: ExpansionJewel,
     id: number | undefined,
     socketEjs: Map<number, { id: number; ej: ExpansionJewel }>
@@ -266,7 +289,7 @@ function getEnabledNodeIdsOfJewel(
     const smallIds: number[] = [];
 
     const group = jewel.data.subgraph.groups[`expansion_${jewel.seqNum}`];
-    const originalNodeIds: number[] = group.nodes;
+    const originalNodeIds: number[] = group.nodes.map((n) => Number(n));
     const jewelNodes = jewel.data.subgraph.nodes;
 
     // unique small cluster jewel
@@ -286,7 +309,7 @@ function getEnabledNodeIdsOfJewel(
             notableIds.push(originalId);
         } else if (node.isJewelSocket) {
             socketIds.push(originalId);
-            socketEjs.set(Number(node.expansionJewel.proxy), { id, ej: node.expansionJewel });
+            socketEjs.set(Number(node.expansionJewel!.proxy), { id, ej: node.expansionJewel! });
         } else if (node.isMastery) {
         } else {
             smallIds.push(originalId);
@@ -426,7 +449,7 @@ const CLUSTER_JEWEL_SIZE_LARGE = "LARGE";
 const CLUSTER_JEWEL_SIZE_MEDIUM = "MEDIUM";
 const CLUSTER_JEWEL_SIZE_SMALL = "SMALL";
 
-function clusterJewelSize(type: string): string {
+function clusterJewelSize(type: string): "LARGE" | "MEDIUM" | "SMALL" | undefined {
     if (type === "JewelPassiveTreeExpansionLarge") {
         return CLUSTER_JEWEL_SIZE_LARGE;
     } else if (type === "JewelPassiveTreeExpansionMedium") {
@@ -434,7 +457,7 @@ function clusterJewelSize(type: string): string {
     } else if (type === "JewelPassiveTreeExpansionSmall") {
         return CLUSTER_JEWEL_SIZE_SMALL;
     }
-    return "";
+    return undefined;
 }
 
 function getClusterJewelMetaBySize(size: string): ClusterJewelMeta {
@@ -442,8 +465,10 @@ function getClusterJewelMetaBySize(size: string): ClusterJewelMeta {
         return CLUSTER_JEWEL_META_MAP.large;
     } else if (size === CLUSTER_JEWEL_SIZE_MEDIUM) {
         return CLUSTER_JEWEL_META_MAP.medium;
-    } else {
+    } else if (size === CLUSTER_JEWEL_SIZE_SMALL) {
         return CLUSTER_JEWEL_META_MAP.small;
+    } else {
+        throw new Error("unreachable: unknown cluster jewel size: " + size);
     }
 }
 

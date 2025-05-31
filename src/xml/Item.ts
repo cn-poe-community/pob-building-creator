@@ -1,6 +1,7 @@
 import Mustache from "mustache";
 import { ItemSet } from "./Slot.js";
 import { getFirstNum } from "../util/strings.js";
+import { ItemTypes } from "pathofexile-api-types";
 
 const RARITY_MAP: { [key: string]: string } = {
     0: "NORMAL",
@@ -29,9 +30,9 @@ const BASE_TYPE_MAP: { [key: string]: string } = {
 
 export class Item {
     id: number;
-    readonly json: any;
+    readonly json: ItemTypes.Item;
 
-    constructor(id: number, json: any) {
+    constructor(id: number, json: ItemTypes.Item) {
         this.id = id;
         this.json = json;
     }
@@ -63,12 +64,12 @@ export class Item {
             }
         }
 
-        const propMap = new Map<string, any>();
+        const propMap = new Map<string, ItemTypes.Property>();
         if (json.properties) {
-            (json.properties as any[]).forEach((prop) => propMap.set(prop.name, prop));
+            json.properties.forEach((prop) => propMap.set(prop.name, prop));
         }
         const qualityText = propMap.get("Quality")?.values[0][0];
-        model.quality = getFirstNum(qualityText);
+        model.quality = qualityText !== undefined ? getFirstNum(qualityText) : undefined;
         model.evasionRating = propMap.get("Evasion Rating")?.values[0][0];
         model.energyShield = propMap.get("Energy Shield")?.values[0][0];
         model.armour = propMap.get("Armour")?.values[0][0];
@@ -76,9 +77,9 @@ export class Item {
         model.radius = propMap.get("Radius")?.values[0][0];
         model.limitedTo = propMap.get("Limited to")?.values[0][0];
 
-        const requireMap = new Map<string, any>();
+        const requireMap = new Map<string, ItemTypes.Requirement>();
         if (json.requirements) {
-            (json.requirements as any[]).forEach((requirement) =>
+            json.requirements.forEach((requirement) =>
                 requireMap.set(requirement.name, requirement)
             );
         }
@@ -95,7 +96,7 @@ export class Item {
 
         let abyssalSocketCount = 0;
         if (json.sockets) {
-            const arr = json.sockets as any[];
+            const arr = json.sockets;
             const builder = [];
             for (let i = 0; i < arr.length; i++) {
                 if (i > 0) {
@@ -120,10 +121,10 @@ export class Item {
 
         let implicitCount = 0;
         if (model.enchantMods) {
-            implicitCount += (model.enchantMods as any[]).length;
+            implicitCount += model.enchantMods.length;
         }
         if (model.implicitMods) {
-            implicitCount += (model.implicitMods as any[]).length;
+            implicitCount += model.implicitMods.length;
         }
         model.implicitCount = implicitCount;
 

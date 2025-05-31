@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "js-base64": "^3.7.7",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "pathofexile-api-types": "^0.0.1"
   },
   "files": [
     "dist/**/*"

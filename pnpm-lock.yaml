@@ -14,6 +14,9 @@ importers:
       mustache:
         specifier: ^4.2.0
         version: 4.2.0
+      pathofexile-api-types:
+        specifier: ^0.0.1
+        version: 0.0.1
     devDependencies:
       '@rollup/plugin-node-resolve':
         specifier: ^15.3.1
@@ -607,6 +610,9 @@ packages:
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
+
+  pathofexile-api-types@0.0.1:
+    resolution: {integrity: sha512-EylObRzCM1TNwm2HDYEczDqJxnAolsZFhJLwIb5w6Jygs+Bd3iIPDOuy6GbJ1AprGeNsO2mFZ8cfEQFJzUbk/w==}
 
   pathval@2.0.0:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
@@ -1269,6 +1275,8 @@ snapshots:
       minipass: 7.1.2
 
   pathe@2.0.3: {}
+
+  pathofexile-api-types@0.0.1: {}
 
   pathval@2.0.0: {}
 

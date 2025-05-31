@@ -1,4 +1,5 @@
 import Mustache from "mustache";
+import { PassiveSkillTypes } from "pathofexile-api-types";
 
 export class Tree {
     spec = new Spec();
@@ -85,7 +86,7 @@ export class Socket {
 export class Overrides {
     members: Override[] = [];
 
-    public parse(skillOverrides: any) {
+    public parse(skillOverrides: PassiveSkillTypes.SkillOverrides) {
         this.members = [];
         for (const [key, value] of Object.entries(skillOverrides)) {
             this.members.push(new Override(key, value));
@@ -107,7 +108,7 @@ export class Override {
     dn: string;
     nodeId: string;
 
-    constructor(nodeId: string, json: any) {
+    constructor(nodeId: string, json: PassiveSkillTypes.SkillOverride) {
         this.dn = json.name;
         this.nodeId = nodeId;
     }

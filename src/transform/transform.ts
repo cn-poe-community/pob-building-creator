@@ -1,4 +1,5 @@
 import Mustache from "mustache";
+import { ItemTypes, PassiveSkillTypes } from "pathofexile-api-types";
 import { PathOfBuilding } from "../xml/PathOfBuilding.js";
 import { Item } from "../xml/Item.js";
 import { getSlotName } from "./slot.js";
@@ -17,13 +18,17 @@ export type TransformOptions = {
 };
 
 export class Transformer {
-    private itemsData: any;
-    private passiveSkillsData: any;
+    private itemsData: ItemTypes.GetItemsResult;
+    private passiveSkillsData: PassiveSkillTypes.GetPassiveSkillsResult;
     private building?: PathOfBuilding;
     private itemIdGenerator = 1;
     private options?: TransformOptions;
 
-    constructor(itemsData: any, passiveSkillsData: any, options?: TransformOptions) {
+    constructor(
+        itemsData: ItemTypes.GetItemsResult,
+        passiveSkillsData: PassiveSkillTypes.GetPassiveSkillsResult,
+        options?: TransformOptions
+    ) {
         this.itemsData = itemsData;
         this.passiveSkillsData = passiveSkillsData;
         this.options = options;
@@ -63,17 +68,17 @@ export class Transformer {
             slotSet.append(slot);
 
             if (data.socketedItems && data.socketedItems.length > 0) {
-                const sockets = data.sockets as any[];
-                const socketedItems = data.socketedItems as any[];
+                const sockets = data.sockets;
+                const socketedItems = data.socketedItems;
 
-                let group = [];
+                let group: ItemTypes.SocketedGem[] = [];
                 let prevGroupNum = 0;
                 const skills = building.skills.skillSet.skills;
                 let abyssJewelCount = 0;
 
                 for (let i = 0; i < socketedItems.length; i++) {
                     const si = socketedItems[i];
-                    if (si.abyssJewel) {
+                    if ((si as ItemTypes.AbyssJewel).abyssJewel) {
                         abyssJewelCount++;
                         const item = new Item(this.itemIdGenerator++, si);
                         itemList.push(item);
@@ -81,17 +86,19 @@ export class Transformer {
                         const slot = Slot.NewEquipmentSlot(siSlotName, item.id);
                         slotSet.append(slot);
                     } else {
+                        const gem = si as ItemTypes.SocketedGem;
+
                         if (i == 0) {
-                            group.push(si);
-                            prevGroupNum = sockets[0].group;
+                            group.push(gem);
+                            prevGroupNum = sockets![0].group;
                         } else {
-                            const groupNum = sockets[i].group;
+                            const groupNum = sockets![i].group;
                             if (groupNum !== prevGroupNum) {
                                 skills.push(new Skill(slotName, group));
                                 prevGroupNum = groupNum;
-                                group = [si];
+                                group = [gem];
                             } else {
-                                group.push(si);
+                                group.push(gem);
                             }
                         }
                     }
@@ -104,11 +111,11 @@ export class Transformer {
     }
 
     // Return all building item json data
-    getBuildingItemDataArray(): any[] {
+    getBuildingItemDataArray(): ItemTypes.EquippedItem[] {
         const itemsJson = this.itemsData.items;
-        const list: any[] = [];
+        const list: ItemTypes.EquippedItem[] = [];
         list.push(
-            ...(itemsJson as any[]).filter((item) => {
+            ...(itemsJson as ItemTypes.EquippedItem[]).filter((item) => {
                 switch (item.inventoryId) {
                     case "Weapon2":
                     case "Offhand2":
