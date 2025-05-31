@@ -12,8 +12,8 @@
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
     "format": "prettier --write src/**/*.ts",
-    "test": "vitest",
-    "prepare": "pnpm build"
+    "test": "vitest --run",
+    "prepublishOnly": "pnpm test && pnpm build"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.3.1",

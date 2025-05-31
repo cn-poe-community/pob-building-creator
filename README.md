@@ -2,9 +2,12 @@
 Create [PathOfBuilding](https://github.com/PathOfBuildingCommunity/PathOfBuilding) building from POE API.
 
 # Usage
+Use `npm` or any other package manager:
 ```
 npm install pob-building-creator
+...
 ```
+
 Create building:
 ```ts
 import {transform} from "pob-building-creator";
