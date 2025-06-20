@@ -1,4 +1,4 @@
-import gems from "./gems.json" assert  { type: "json" };
+import gems from "./gems.json" with  { type: "json" };
 
 // 生成src/transform/gem.ts里面的部分数据，需要gems.json文件（见db项目）
 // 使用方式：

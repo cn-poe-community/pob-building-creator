@@ -1,4 +1,4 @@
-import tree from "./tree.json" assert  { type: "json" };
+import tree from "./tree.json" with  { type: "json" };
 
 // 生成src/transform/tree/data.ts里面的部分数据，需要tree.json文件（见db项目）
 // 使用方式：
