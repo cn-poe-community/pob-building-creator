@@ -196,4 +196,5 @@ export const transfiguredGems: string[] = [
     "Galvanic Field of Intensity",
     "Volcanic Fissure of Snaking",
     "Frozen Legion of Rallying",
+    "Kinetic Rain of Impact",
 ];

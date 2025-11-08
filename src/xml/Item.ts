@@ -93,6 +93,7 @@ export class Item {
             ?.map((mod) => mod.split("\n"))
             .flat();
         model.crucibleMods = (json.crucibleMods as string[])?.map((mod) => mod.split("\n")).flat();
+        model.mutatedMods = (json.mutatedMods as string[])?.map((mod) => mod.split("\n")).flat();
 
         let abyssalSocketCount = 0;
         if (json.sockets) {
@@ -214,6 +215,9 @@ Implicits: {{implicitCount}}
 {{#explicitMods}}
 {{.}}
 {{/explicitMods}}
+{{#mutatedMods}}
+{mutated}{{.}}
+{{/mutatedMods}}
 {{#fracturedMods}}
 {fractured}{{.}}
 {{/fracturedMods}}

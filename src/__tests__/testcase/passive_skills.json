@@ -1,379 +1,208 @@
 {
-    "character": 4,
-    "ascendancy": 1,
-    "alternate_ascendancy": 0,
+    "character": 3,
+    "ascendancy": 2,
+    "alternate_ascendancy": 13,
     "hashes": [
-        903,
-        1325,
-        1461,
-        1568,
-        1698,
-        2715,
-        3314,
-        4269,
-        4378,
-        4656,
-        5237,
-        5408,
-        5632,
-        6108,
-        6580,
-        6797,
-        9206,
-        10143,
-        11497,
-        11651,
-        11859,
-        12412,
-        14292,
-        14813,
-        16079,
-        16213,
-        16306,
-        17201,
-        17315,
-        17383,
-        17934,
-        18302,
-        18770,
-        19069,
-        19196,
-        19711,
-        19858,
-        20807,
-        22217,
-        22266,
-        22356,
-        23066,
-        23237,
-        23334,
-        23471,
-        25260,
-        25933,
-        26528,
-        27656,
-        27788,
-        29185,
-        29359,
-        29454,
-        29547,
-        29856,
-        29933,
-        30679,
-        31291,
-        31471,
-        32059,
-        32555,
-        32657,
-        32681,
-        32763,
-        34009,
-        34031,
-        34483,
-        34678,
-        36221,
-        36287,
-        36764,
-        37504,
-        39338,
-        39725,
-        40132,
-        40170,
-        40362,
-        41866,
-        42104,
-        42293,
-        42443,
-        44316,
-        45283,
-        45696,
-        46277,
-        46495,
-        46882,
-        48438,
-        48614,
-        48807,
-        48859,
-        49621,
-        49806,
-        49900,
-        49971,
-        50845,
-        54127,
-        54354,
-        55348,
-        55880,
-        56001,
-        56295,
-        56589,
-        57080,
-        58271,
-        58803,
-        58851,
-        58854,
-        58921,
-        59866,
-        60735,
-        61393,
-        61834,
-        62588,
-        62744,
-        62817,
-        63251,
-        63649,
-        63727,
-        64882
+        1593,
+        3533,
+        4367,
+        5296,
+        5743,
+        5935,
+        6712,
+        6764,
+        6770,
+        6967,
+        7374,
+        7444,
+        7960,
+        8948,
+        9386,
+        11088,
+        12246,
+        12475,
+        12738,
+        13961,
+        14057,
+        14936,
+        15117,
+        15167,
+        15405,
+        15631,
+        19501,
+        19919,
+        20832,
+        20987,
+        21033,
+        21678,
+        21958,
+        21974,
+        21984,
+        22618,
+        23027,
+        23659,
+        24872,
+        25535,
+        25831,
+        26196,
+        26270,
+        26393,
+        26557,
+        26712,
+        27038,
+        27323,
+        29353,
+        32210,
+        32932,
+        33310,
+        33631,
+        33755,
+        33864,
+        34171,
+        34506,
+        35233,
+        35288,
+        36678,
+        36949,
+        38176,
+        38921,
+        39841,
+        40810,
+        41415,
+        43061,
+        43988,
+        44184,
+        44202,
+        44967,
+        49605,
+        49651,
+        50029,
+        50422,
+        50570,
+        50862,
+        51219,
+        52502,
+        53123,
+        54279,
+        55190,
+        55743,
+        56461,
+        57226,
+        58218,
+        58998,
+        60472,
+        60989,
+        61419,
+        62697,
+        63039,
+        63447,
+        63482,
+        64210,
+        64426,
+        65108
     ],
     "hashes_ex": [
-        40,
-        42,
-        46,
-        48,
-        50,
-        157,
-        161,
-        163,
-        165,
-        167
+        1,
+        3,
+        5,
+        7,
+        9,
+        12,
+        13,
+        15,
+        30,
+        32,
+        33,
+        79,
+        81,
+        83,
+        85,
+        89,
+        90,
+        93,
+        95,
+        109,
+        110,
+        113,
+        198,
+        200,
+        202,
+        204,
+        206,
+        208,
+        209,
+        211,
+        226,
+        228,
+        229
     ],
     "mastery_effects": {
-        "32657": 48980,
-        "31291": 50922,
-        "48859": 64875,
-        "44316": 47642,
-        "40170": 23936,
-        "39338": 35582,
-        "55348": 64511,
-        "46495": 28638,
-        "62588": 64381
+        "26393": 61283,
+        "63482": 50993,
+        "25535": 30612,
+        "38921": 4500,
+        "41415": 34242
     },
     "skill_overrides": {
-        "44316": {
-            "name": "Runegraft of Treachery",
-            "icon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon20.png",
+        "62429": {
+            "name": "Tattoo of the Ngamahu Firewalker",
+            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+            "isTattoo": true,
+            "stats": [
+                "+6% to Fire Resistance"
+            ]
+        },
+        "59928": {
+            "name": "Tattoo of the Ngamahu Firewalker",
+            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+            "isTattoo": true,
+            "stats": [
+                "+6% to Fire Resistance"
+            ]
+        },
+        "63723": {
+            "name": "Tattoo of the Ngamahu Firewalker",
+            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+            "isTattoo": true,
+            "stats": [
+                "+6% to Fire Resistance"
+            ]
+        },
+        "53793": {
+            "name": "Tattoo of the Ngamahu Firewalker",
+            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+            "isTattoo": true,
+            "stats": [
+                "+6% to Fire Resistance"
+            ]
+        },
+        "5233": {
+            "name": "Tattoo of the Ngamahu Firewalker",
+            "icon": "Art/2DArt/SkillIcons/passives/FireResistNode.png",
+            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/NgamahuTribePassiveBG.png",
+            "isTattoo": true,
+            "stats": [
+                "+6% to Fire Resistance"
+            ]
+        },
+        "26393": {
+            "name": "Runegraft of the Fortress",
+            "icon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon1.png",
             "activeEffectImage": "Art/2DArt/UIImages/InGame/Village/RuneCraftingPassiveBG.png",
             "isMastery": true,
-            "inactiveIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon20.png",
-            "activeIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon20.png",
+            "inactiveIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon1.png",
+            "activeIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon1.png",
             "stats": [
-                "15% increased Reservation Efficiency of Skills",
-                "Auras from your Skills which affect Allies also affect Enemies"
-            ]
-        },
-        "32555": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
+                "10% reduced Attributes",
+                "40% increased Global Defences"
             ],
             "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "29937": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "6363": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "5237": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "23471": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "5408": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "6580": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "56589": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "12412": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "20807": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "36287": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "1461": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "49900": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "11497": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "49806": {
-            "name": "Tattoo of the Tasalio Tideshifter",
-            "icon": "Art/2DArt/SkillIcons/passives/stundex.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "10% chance to Avoid being Stunned"
-            ]
-        },
-        "22266": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "30679": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "14292": {
-            "name": "Tattoo of the Ramako Shaman",
-            "icon": "Art/2DArt/SkillIcons/passives/SpellSuppresionNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/RamakoTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "+2% chance to Suppress Spell Damage"
-            ],
-            "reminderText": [
-                "(50% of Damage from Suppressed Hits and Ailments they inflict is prevented)"
-            ]
-        },
-        "63649": {
-            "name": "Tattoo of the Tasalio Warrior",
-            "icon": "Art/2DArt/SkillIcons/passives/AttackBlindNode.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/AncestralTrial/PassiveTreeTattoos/TasalioTribePassiveBG.png",
-            "isTattoo": true,
-            "stats": [
-                "5% chance to Blind Enemies on Hit with Attacks"
-            ],
-            "reminderText": [
-                "(Being Blinded causes 20% less Accuracy Rating and Evasion Rating, for 4 seconds)"
-            ]
-        },
-        "62588": {
-            "name": "Runegraft of the Warp",
-            "icon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "activeEffectImage": "Art/2DArt/UIImages/InGame/Village/RuneCraftingPassiveBG.png",
-            "isMastery": true,
-            "inactiveIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "activeIcon": "Art/2DArt/SkillIcons/passives/AtlasTrees/RuneGraftingIcon11.png",
-            "stats": [
-                "Buffs on you expire 30% slower",
-                "Debuffs on you expire 30% faster"
-            ],
-            "reminderText": [
-                "(Effects cannot be slowed below 25% of their normal expiry rate)"
+                "(Attributes are Strength, Dexterity, and Intelligence)",
+                "(Armour, Evasion Rating and Energy Shield are the standard Defences)"
             ]
         }
     },
@@ -382,249 +211,16 @@
             "verified": false,
             "w": 1,
             "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
-            "league": "Mercenaries",
-            "id": "8386a683aa79080194406ddc68fc92e43b0e14313ef4a469a7b189968bed0fa4",
-            "name": "Ghoul Bliss",
-            "typeLine": "Large Cluster Jewel",
-            "baseType": "Large Cluster Jewel",
-            "rarity": "Rare",
-            "ilvl": 83,
-            "identified": true,
-            "requirements": [
-                {
-                    "name": "Level",
-                    "values": [
-                        [
-                            "40",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 62
-                }
-            ],
-            "enchantMods": [
-                "Adds 8 Passive Skills",
-                "2 Added Passive Skills are Jewel Sockets",
-                "Added Small Passive Skills grant: Axe Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Sword Attacks deal 12% increased Damage with Hits and Ailments"
-            ],
-            "explicitMods": [
-                "Added Small Passive Skills also grant: +3% to Chaos Resistance",
-                "1 Added Passive Skill is Calamitous",
-                "1 Added Passive Skill is Fuel the Fight",
-                "1 Added Passive Skill is Martial Prowess"
-            ],
-            "descrText": "Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
-            "frameType": 2,
-            "x": 17,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0Nvbm5lY3RlZEpld2VsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/1d2c1f698a/ConnectedJewel.png",
-            "league": "Mercenaries",
-            "id": "bd18b70c201f55450b14b467cc0f062ce600b4b91c71c4620444d8b735d14b6d",
-            "name": "Thread of Hope",
-            "typeLine": "Crimson Jewel",
-            "baseType": "Crimson Jewel",
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "ff888bdbd006b11d92cbac612e519bc67c09db37f96a0a5e5768928674e787a4",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
             "rarity": "Unique",
-            "ilvl": 80,
+            "ilvl": 79,
             "identified": true,
             "corrupted": true,
-            "properties": [
-                {
-                    "name": "Radius",
-                    "values": [
-                        [
-                            "Variable",
-                            1
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 24
-                }
-            ],
-            "implicitMods": [
-                "Damage Penetrates 1% Elemental Resistances",
-                "Damage Penetrates 1% Lightning Resistance"
-            ],
-            "explicitMods": [
-                "Only affects Passives in Very Large Ring",
-                "Passives in Radius can be Allocated without being connected to your tree",
-                "-13% to all Elemental Resistances"
-            ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
-            "flavourText": [
-                "Though we cannot touch; one thought, one wish, through centuries alone in darkness."
-            ],
-            "frameType": 3,
-            "x": 16,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjEsImZyYWN0dXJlZCI6dHJ1ZX1d/b470123709/basicint.png",
-            "league": "Mercenaries",
-            "id": "deff2ed1cf9c9306650b788e3a68f7ca1d54efb1c49de272fdd018e2953ec1d4",
-            "fractured": true,
-            "name": "Foe Eye",
-            "typeLine": "Cobalt Jewel",
-            "baseType": "Cobalt Jewel",
-            "rarity": "Rare",
-            "ilvl": 84,
-            "identified": true,
-            "explicitMods": [
-                "+16% to Critical Strike Multiplier with Lightning Skills",
-                "+14% to Critical Strike Multiplier with Elemental Skills",
-                "15% increased Freeze Duration on Enemies",
-                "5% chance to Freeze"
-            ],
-            "fracturedMods": [
-                "6% increased maximum Life"
-            ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
-            "frameType": 2,
-            "x": 45,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljZGV4IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/9ed22a2b94/basicdex.png",
-            "league": "Mercenaries",
-            "id": "01c617fb08029c1b8eedeb4958cde21583d51231d0369dcf30dab0251ea389f9",
-            "name": "Hypnotic Shine",
-            "typeLine": "Viridian Jewel",
-            "baseType": "Viridian Jewel",
-            "rarity": "Rare",
-            "ilvl": 74,
-            "identified": true,
-            "explicitMods": [
-                "4% increased Attack Speed with Two Handed Melee Weapons",
-                "+15% to Critical Strike Multiplier with Two Handed Melee Weapons",
-                "+13% to Critical Strike Multiplier with Elemental Skills",
-                "16% increased Freeze Duration on Enemies",
-                "3% chance to Freeze"
-            ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
-            "frameType": 2,
-            "x": 29,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1B1enpsZVBpZWNlSmV3ZWxfR3JlYXRUYW5nbGUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/9035b9ffd4/PuzzlePieceJewel_GreatTangle.png",
-            "league": "Mercenaries",
-            "id": "bb177f62420ea7f9b1d04a0e0115c0f2949cec28cbfa57d633ef34401fd3ab61",
-            "name": "Forbidden Flesh",
-            "typeLine": "Cobalt Jewel",
-            "baseType": "Cobalt Jewel",
-            "rarity": "Unique",
-            "ilvl": 86,
-            "identified": true,
-            "corrupted": true,
-            "properties": [
-                {
-                    "name": "Limited to",
-                    "values": [
-                        [
-                            "1",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0
-                }
-            ],
-            "requirements": [
-                {
-                    "name": "Class:",
-                    "values": [
-                        [
-                            "Duelist",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 57
-                }
-            ],
-            "explicitMods": [
-                "Allocates First to Strike, Last to Fall if you have the matching modifier on Forbidden Flame"
-            ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
-            "flavourText": [
-                "The bodies of those wholly subsumed by the Tangle\r",
-                "continue to merge and mutate and cry out for release..."
-            ],
-            "frameType": 3,
-            "x": 47,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1ByaXN0aW5lQ29uZGl0aW9uaW5nIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/5ad58d3a2e/PristineConditioning.png",
-            "league": "Mercenaries",
-            "id": "0f98e16c3319ae4a5aa3aebc1df01a13f3db54d0700bb2e3da4dc307a8093ab6",
-            "name": "Ancestral Vision",
-            "typeLine": "Viridian Jewel",
-            "baseType": "Viridian Jewel",
-            "rarity": "Unique",
-            "ilvl": 68,
-            "identified": true,
-            "properties": [
-                {
-                    "name": "Limited to",
-                    "values": [
-                        [
-                            "1",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0
-                }
-            ],
-            "explicitMods": [
-                "+8 to Dexterity",
-                "Modifiers to Chance to Suppress Spell Damage also apply to Chance to Avoid Elemental Ailments at 50% of their Value"
-            ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
-            "flavourText": [
-                "The spirits of our ancestors guided us from the Archipelago to the continent.\r",
-                "Inextricably, the purity of our souls is linked to the ones who came before us."
-            ],
-            "frameType": 3,
-            "x": 5,
-            "y": 0,
-            "inventoryId": "PassiveJewels"
-        },
-        {
-            "verified": false,
-            "w": 1,
-            "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
-            "league": "Mercenaries",
-            "id": "cab7b13195659c9f6c5ad50abf76bf26818a5c74eb4ad14d110007e703ca4282",
-            "name": "Behemoth Cut",
-            "typeLine": "Large Cluster Jewel",
-            "baseType": "Large Cluster Jewel",
-            "rarity": "Rare",
-            "ilvl": 83,
-            "identified": true,
             "requirements": [
                 {
                     "name": "Level",
@@ -638,20 +234,19 @@
                     "type": 62
                 }
             ],
-            "enchantMods": [
-                "Adds 8 Passive Skills",
-                "2 Added Passive Skills are Jewel Sockets",
-                "Added Small Passive Skills grant: Axe Attacks deal 12% increased Damage with Hits and Ailments\nAdded Small Passive Skills grant: Sword Attacks deal 12% increased Damage with Hits and Ailments"
-            ],
             "explicitMods": [
-                "Added Small Passive Skills also grant: +3 to All Attributes",
-                "1 Added Passive Skill is Drive the Destruction",
-                "1 Added Passive Skill is Feed the Fury",
-                "1 Added Passive Skill is Martial Prowess"
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is One with the Shield",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Snowstorm"
             ],
-            "descrText": "Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
-            "frameType": 2,
-            "x": 12,
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 23,
             "y": 0,
             "inventoryId": "PassiveJewels"
         },
@@ -659,10 +254,10 @@
             "verified": false,
             "w": 1,
             "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL0thcnVpQ2l2aWxpemF0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/04aefd20e6/KaruiCivilization.png",
-            "league": "Mercenaries",
-            "id": "33f8b068f2dee06a8493d923db1c7db8905082d72543f9c2b46d81b4bd07ad52",
-            "name": "Lethal Pride",
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL01hcmFrZXRoQ2l2aWxpemF0aW9uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/8e18d378b4/MarakethCivilization.png",
+            "league": "Keepers",
+            "id": "9c9ee555ded1cdd7d37a220f66afe70e96a4b794bc3dea6e6dd7101f8029d947",
+            "name": "Brutal Restraint",
             "typeLine": "Timeless Jewel",
             "baseType": "Timeless Jewel",
             "rarity": "Unique",
@@ -692,15 +287,15 @@
                 }
             ],
             "explicitMods": [
-                "Commanded leadership over 14845 warriors under Akoya\nPassives in radius are Conquered by the Karui",
+                "Denoted service of 2728 dekhara in the akhara of Balbala\nPassives in radius are Conquered by the Maraketh",
                 "Historic"
             ],
             "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
             "flavourText": [
-                "They believed themselves the greatest warriors, but that savagery turned upon their own."
+                "They believed themselves the most ordered, but that tradition turned their forests to salt."
             ],
             "frameType": 3,
-            "x": 4,
+            "x": 14,
             "y": 0,
             "inventoryId": "PassiveJewels"
         },
@@ -708,18 +303,90 @@
             "verified": false,
             "w": 1,
             "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1B1enpsZVBpZWNlSmV3ZWxfQ2xlYW5zaW5nRmlyZSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWxpYyI6MTJ9XQ/9da520ef71/PuzzlePieceJewel_CleansingFire.png",
-            "league": "Mercenaries",
-            "id": "a7570cf97d76fc960a1864fc7a57def6c3f977246fb45f7302afc414c95ec510",
-            "isRelic": true,
-            "foilVariation": 12,
-            "name": "Forbidden Flame",
-            "typeLine": "Crimson Jewel",
-            "baseType": "Crimson Jewel",
-            "rarity": "Unique",
-            "ilvl": 84,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljaW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/510013aec2/basicint.png",
+            "league": "Keepers",
+            "id": "44e37f761c344a2a63d1cdb6df7455522d4dde8aaa3cfcad58283b744c583646",
+            "name": "Blight Wisdom",
+            "typeLine": "Cobalt Jewel",
+            "baseType": "Cobalt Jewel",
+            "rarity": "Rare",
+            "ilvl": 83,
             "identified": true,
             "corrupted": true,
+            "implicitMods": [
+                "Corrupted Blood cannot be inflicted on you"
+            ],
+            "explicitMods": [
+                "+2% Chance to Block Attack Damage while holding a Shield",
+                "16% increased Mine Damage",
+                "+6% to Damage over Time Multiplier"
+            ],
+            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
+            "frameType": 2,
+            "x": 19,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "540cda5242dd7f5869fe3c9fdaf501663966a1b1b231a4a83ba0b77da4f3da94",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
+            "rarity": "Unique",
+            "ilvl": 77,
+            "identified": true,
+            "corrupted": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is Dread March",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Savour the Moment"
+            ],
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 51,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1N1YmxpbWVWaXNpb24iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/ecd19a7f80/SublimeVision.png",
+            "league": "Keepers",
+            "id": "6b8daf22154828611a1b27de29451ca69b97fb70d3c79c51ac468fc860346b2d",
+            "influences": {
+                "shaper": true
+            },
+            "shaper": true,
+            "name": "Sublime Vision",
+            "typeLine": "Prismatic Jewel",
+            "baseType": "Prismatic Jewel",
+            "rarity": "Unique",
+            "ilvl": 87,
+            "identified": true,
             "properties": [
                 {
                     "name": "Limited to",
@@ -732,29 +399,19 @@
                     "displayMode": 0
                 }
             ],
-            "requirements": [
-                {
-                    "name": "Class:",
-                    "values": [
-                        [
-                            "Duelist",
-                            0
-                        ]
-                    ],
-                    "displayMode": 0,
-                    "type": 57
-                }
-            ],
             "explicitMods": [
-                "Allocates First to Strike, Last to Fall if you have the matching modifier on Forbidden Flesh"
+                "37% increased Effect of Non-Curse Auras from your Skills on Enemies",
+                "Enemies you Kill while using Pride have 25% chance to Explode, dealing a tenth of their maximum Life as Physical Damage",
+                "Aura Skills other than Pride are Disabled"
             ],
             "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
             "flavourText": [
-                "The minds of those studied utterly by the Cleansing Fire\r",
-                "continue to think and dream and beg for silence..."
+                "This world is not good enough for her,\r",
+                "so I will make a better one. Nothing\r",
+                "matters but the pursuit of perfection."
             ],
-            "frameType": 10,
-            "x": 10,
+            "frameType": 3,
+            "x": 18,
             "y": 0,
             "inventoryId": "PassiveJewels"
         },
@@ -762,503 +419,1492 @@
             "verified": false,
             "w": 1,
             "h": 1,
-            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL2Jhc2ljZGV4IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/9ed22a2b94/basicdex.png",
-            "league": "Mercenaries",
-            "id": "f825be686c5755da66c87dd536c17b0f7e58b7cc4e15a5b35d6da737ef422d13",
-            "name": "Bramble Glimmer",
-            "typeLine": "Viridian Jewel",
-            "baseType": "Viridian Jewel",
-            "rarity": "Rare",
-            "ilvl": 77,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "5fe7a4161d6a687773bb233d450c601bb1fa133dcefb7f8e52a3a90e8c702093",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
+            "rarity": "Unique",
+            "ilvl": 79,
             "identified": true,
-            "explicitMods": [
-                "8% increased Damage",
-                "+15% to Critical Strike Multiplier with Two Handed Melee Weapons",
-                "+18% to Critical Strike Multiplier with Lightning Skills",
-                "15% increased Freeze Duration on Enemies",
-                "5% chance to Freeze"
+            "corrupted": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
             ],
-            "descrText": "Place into an allocated Jewel Socket on the Passive Skill Tree. Right click to remove from the Socket.",
+            "explicitMods": [
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is Cooked Alive",
+                "1 Added Passive Skill is Enduring Composure",
+                "1 Added Passive Skill is Primordial Bond"
+            ],
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 21,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
+            "league": "Keepers",
+            "id": "385819321c8474e0769ab709959a0c45bb72ebf4d65b0054fa082289f8748cfa",
+            "name": "Sol Sliver",
+            "typeLine": "Large Cluster Jewel",
+            "baseType": "Large Cluster Jewel",
+            "rarity": "Rare",
+            "ilvl": 83,
+            "identified": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "enchantMods": [
+                "Adds 8 Passive Skills",
+                "2 Added Passive Skills are Jewel Sockets",
+                "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+            ],
+            "explicitMods": [
+                "Added Small Passive Skills also grant: +5% to Cold Resistance",
+                "Added Small Passive Skills also grant: +9 to Maximum Energy Shield",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Renewal"
+            ],
+            "descrText": "Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
             "frameType": 2,
-            "x": 27,
+            "x": 11,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
+            "league": "Keepers",
+            "id": "7a1a1e7dc873a7b91e5f0d91205771392d703eb5908eaf5959c5f477bfba7535",
+            "name": "Bramble Joy",
+            "typeLine": "Large Cluster Jewel",
+            "baseType": "Large Cluster Jewel",
+            "rarity": "Rare",
+            "ilvl": 80,
+            "identified": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "enchantMods": [
+                "Adds 8 Passive Skills",
+                "2 Added Passive Skills are Jewel Sockets",
+                "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+            ],
+            "explicitMods": [
+                "Added Small Passive Skills also grant: +5% to Cold Resistance",
+                "Added Small Passive Skills also grant: +7 to Maximum Life",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Rotten Claws"
+            ],
+            "descrText": "Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "frameType": 2,
+            "x": 20,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "bda2ca435dc26c2b8f3a96473cf5cb4cfea82e410de2607c2c058972d9cefab7",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
+            "rarity": "Unique",
+            "ilvl": 84,
+            "identified": true,
+            "corrupted": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is Exploit Weakness",
+                "1 Added Passive Skill is Insatiable Killer",
+                "1 Added Passive Skill is Primordial Bond"
+            ],
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 53,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
+            "league": "Keepers",
+            "id": "490793096915fb97729c2a00603cfc667769467a7bba879dd8b6d2fe7b228a86",
+            "name": "Behemoth Essence",
+            "typeLine": "Large Cluster Jewel",
+            "baseType": "Large Cluster Jewel",
+            "rarity": "Rare",
+            "ilvl": 70,
+            "identified": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "enchantMods": [
+                "Adds 8 Passive Skills",
+                "2 Added Passive Skills are Jewel Sockets",
+                "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+            ],
+            "explicitMods": [
+                "Added Small Passive Skills also grant: +5% to Fire Resistance",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Renewal"
+            ],
+            "descrText": "Place into an allocated Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "frameType": 2,
+            "x": 13,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "903f640a3663d70ce214237b69bb5e2d14bdb7926dc830fe17c90c738d6775a6",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
+            "rarity": "Unique",
+            "ilvl": 84,
+            "identified": true,
+            "corrupted": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is Opportunistic Fusilade",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Savour the Moment"
+            ],
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 33,
+            "y": 0,
+            "inventoryId": "PassiveJewels"
+        },
+        {
+            "verified": false,
+            "w": 1,
+            "h": 1,
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/659b3e6b90/UniqueJewelBase2.png",
+            "league": "Keepers",
+            "id": "854128eca8e35a9093aa60c89a352a17f92e6b061b1e09dfed7a326e262dcbd8",
+            "name": "Megalomaniac",
+            "typeLine": "Medium Cluster Jewel",
+            "baseType": "Medium Cluster Jewel",
+            "rarity": "Unique",
+            "ilvl": 84,
+            "identified": true,
+            "corrupted": true,
+            "requirements": [
+                {
+                    "name": "Level",
+                    "values": [
+                        [
+                            "54",
+                            0
+                        ]
+                    ],
+                    "displayMode": 0,
+                    "type": 62
+                }
+            ],
+            "explicitMods": [
+                "Adds 4 Passive Skills",
+                "Added Small Passive Skills grant Nothing",
+                "1 Added Passive Skill is Hulking Corpses",
+                "1 Added Passive Skill is Primordial Bond",
+                "1 Added Passive Skill is Vicious Guard"
+            ],
+            "descrText": "Place into an allocated Medium or Large Jewel Socket on the Passive Skill Tree. Added passives do not interact with jewel radiuses. Right click to remove from the Socket.",
+            "flavourText": [
+                "If you're going to act like you're better than everyone else, make sure you are."
+            ],
+            "frameType": 3,
+            "x": 35,
             "y": 0,
             "inventoryId": "PassiveJewels"
         }
     ],
     "jewel_data": {
-        "17": {
-            "type": "JewelPassiveTreeExpansionLarge",
+        "23": {
+            "type": "JewelPassiveTreeExpansionMedium",
             "subgraph": {
                 "groups": {
-                    "expansion_17": {
-                        "proxy": "48132",
+                    "expansion_23": {
+                        "proxy": "13201",
                         "nodes": [
-                            "1156",
-                            "157",
-                            "158",
-                            "159",
-                            "160",
-                            "161",
-                            "163",
-                            "165",
-                            "167"
+                            "30",
+                            "32",
+                            "33",
+                            "35"
                         ],
-                        "x": 8807.45,
-                        "y": 129.815,
+                        "x": -4302.55,
+                        "y": -8983.51,
                         "orbits": [
-                            3
+                            2
                         ]
                     }
                 },
                 "nodes": {
-                    "1156": {
-                        "skill": "44810",
-                        "name": "Axe and Sword Damage Mastery",
-                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupSwordAndAxe.png",
-                        "isMastery": true,
-                        "stats": [],
-                        "group": "expansion_17",
-                        "orbit": 0,
-                        "orbitIndex": 0,
-                        "out": [],
-                        "in": []
-                    },
-                    "157": {
-                        "skill": "6910",
-                        "name": "Medium Jewel Socket",
-                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
-                        "isJewelSocket": true,
-                        "expansionJewel": {
-                            "size": 1,
-                            "index": 0,
-                            "proxy": "35926",
-                            "parent": "32763"
-                        },
-                        "stats": [],
-                        "group": "expansion_17",
-                        "orbit": 3,
+                    "30": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_23",
+                        "orbit": 2,
                         "orbitIndex": 1,
                         "out": [
-                            "158"
+                            "32"
                         ],
                         "in": [
-                            "167"
+                            "35"
                         ]
                     },
-                    "158": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments",
-                            "+3% to Chaos Resistance"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_17",
-                        "orbit": 3,
-                        "orbitIndex": 3,
-                        "out": [
-                            "159"
-                        ],
-                        "in": [
-                            "157"
-                        ]
-                    },
-                    "159": {
-                        "skill": "41594",
-                        "name": "Calamitous",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
+                    "32": {
+                        "skill": "53067",
+                        "name": "One with the Shield",
+                        "icon": "Art/2DArt/SkillIcons/passives/BlockAttackDmgNotable.png",
                         "isNotable": true,
                         "stats": [
-                            "10% chance to Freeze, Shock and Ignite",
-                            "30% increased Elemental Damage with Attack Skills",
-                            "15% increased Effect of Non-Damaging Ailments"
+                            "+6% Chance to Block Attack Damage while holding a Shield",
+                            "Recover 50 Life when you Block",
+                            "50% increased Defences from Equipped Shield"
                         ],
                         "reminderText": [
-                            "(Freeze lowers Enemy Action Speed to zero, preventing them from acting. Duration is based on the Cold Damage of the Hit)",
-                            "(Shock increases Damage taken by up to 50%, depending on the amount of Lightning Damage in the hit, for 2 seconds)",
-                            "(Ignite deals Fire Damage over time, based on the base Fire Damage of the Skill, for 4 seconds)",
-                            "(Ailments that do not deal Damage are Scorched, Chilled, Frozen, Brittle, Shocked, and Sapped)"
+                            "(Armour, Evasion Rating and Energy Shield are the standard Defences)"
                         ],
-                        "group": "expansion_17",
-                        "orbit": 3,
-                        "orbitIndex": 4,
-                        "out": [
-                            "160"
-                        ],
-                        "in": [
-                            "158"
-                        ]
-                    },
-                    "160": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments",
-                            "+3% to Chaos Resistance"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_17",
-                        "orbit": 3,
+                        "group": "expansion_23",
+                        "orbit": 2,
                         "orbitIndex": 5,
                         "out": [
-                            "161"
+                            "33"
                         ],
                         "in": [
-                            "159"
+                            "30"
                         ]
                     },
-                    "161": {
-                        "skill": "33753",
-                        "name": "Medium Jewel Socket",
-                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
-                        "isJewelSocket": true,
-                        "expansionJewel": {
-                            "size": 1,
-                            "index": 2,
-                            "proxy": "50179",
-                            "parent": "32763"
-                        },
-                        "stats": [],
-                        "group": "expansion_17",
-                        "orbit": 3,
-                        "orbitIndex": 7,
-                        "out": [
-                            "163"
-                        ],
-                        "in": [
-                            "160"
-                        ]
-                    },
-                    "163": {
-                        "skill": "14518",
-                        "name": "Fuel the Fight",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
-                        "isNotable": true,
-                        "stats": [
-                            "8% increased Attack Speed",
-                            "0.4% of Attack Damage Leeched as Mana",
-                            "20% increased Damage while Leeching"
-                        ],
-                        "reminderText": [
-                            "(Leeched Mana is recovered over time. Multiple Leeches can occur simultaneously, up to a maximum rate)"
-                        ],
-                        "group": "expansion_17",
-                        "orbit": 3,
+                    "33": {
+                        "skill": "43715",
+                        "group": "expansion_23",
+                        "orbit": 2,
                         "orbitIndex": 9,
                         "out": [
-                            "165"
+                            "35",
+                            "32"
                         ],
                         "in": [
-                            "161"
+                            "9408"
                         ]
                     },
-                    "165": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments",
-                            "+3% to Chaos Resistance"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_17",
-                        "orbit": 3,
-                        "orbitIndex": 12,
-                        "out": [
-                            "167",
-                            "163"
-                        ],
-                        "in": [
-                            "32763"
-                        ]
-                    },
-                    "167": {
-                        "skill": "37",
-                        "name": "Martial Prowess",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
+                    "35": {
+                        "skill": "40870",
+                        "name": "Snowstorm",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedLightningDamage.png",
                         "isNotable": true,
                         "stats": [
-                            "20% increased Attack Damage",
-                            "6% increased Attack Speed",
-                            "15% increased Global Accuracy Rating",
-                            "20% increased Damage with Ailments from Attack Skills"
+                            "Gain 8% of Lightning Damage as Extra Cold Damage against Chilled Enemies"
                         ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_17",
-                        "orbit": 3,
-                        "orbitIndex": 15,
+                        "group": "expansion_23",
+                        "orbit": 2,
+                        "orbitIndex": 13,
                         "out": [
-                            "157"
+                            "30"
                         ],
                         "in": [
-                            "165"
+                            "33"
                         ]
                     }
                 }
             }
         },
-        "16": {
-            "type": "JewelStr",
-            "radius": 2400,
-            "radiusMin": 2040
+        "14": {
+            "type": "JewelTimeless",
+            "radius": 1800,
+            "radiusVisual": "Maraketh"
         },
-        "45": {
+        "19": {
             "type": "JewelInt"
         },
-        "29": {
-            "type": "JewelDex"
+        "51": {
+            "type": "JewelPassiveTreeExpansionMedium",
+            "subgraph": {
+                "groups": {
+                    "expansion_51": {
+                        "proxy": "58194",
+                        "nodes": [
+                            "208",
+                            "209",
+                            "211",
+                            "212"
+                        ],
+                        "x": 4481.73,
+                        "y": -8861.99,
+                        "orbits": [
+                            2
+                        ]
+                    }
+                },
+                "nodes": {
+                    "208": {
+                        "skill": "52544",
+                        "name": "Savour the Moment",
+                        "icon": "Art/2DArt/SkillIcons/passives/EnergyShieldNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased maximum Energy Shield",
+                            "Regenerate 3.00% of Energy Shield per second while stationary"
+                        ],
+                        "group": "expansion_51",
+                        "orbit": 2,
+                        "orbitIndex": 3,
+                        "out": [
+                            "209"
+                        ],
+                        "in": [
+                            "212"
+                        ]
+                    },
+                    "209": {
+                        "skill": "43715",
+                        "group": "expansion_51",
+                        "orbit": 2,
+                        "orbitIndex": 7,
+                        "out": [
+                            "211",
+                            "208"
+                        ],
+                        "in": [
+                            "64583"
+                        ]
+                    },
+                    "211": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_51",
+                        "orbit": 2,
+                        "orbitIndex": 11,
+                        "out": [
+                            "212"
+                        ],
+                        "in": [
+                            "209"
+                        ]
+                    },
+                    "212": {
+                        "skill": "55171",
+                        "name": "Dread March",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreaseMinionLifeNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Minions have 10% increased maximum Life",
+                            "Minions have 10% increased Movement Speed",
+                            "Minions have 10% additional Physical Damage Reduction",
+                            "Minions have +10% to Chaos Resistance"
+                        ],
+                        "group": "expansion_51",
+                        "orbit": 2,
+                        "orbitIndex": 15,
+                        "out": [
+                            "208"
+                        ],
+                        "in": [
+                            "211"
+                        ]
+                    }
+                }
+            }
         },
-        "47": {
-            "type": "JewelInt"
+        "18": {
+            "type": "JewelPrismatic"
         },
-        "5": {
-            "type": "JewelDex"
+        "21": {
+            "type": "JewelPassiveTreeExpansionMedium",
+            "subgraph": {
+                "groups": {
+                    "expansion_21": {
+                        "proxy": "55706",
+                        "nodes": [
+                            "12",
+                            "13",
+                            "15",
+                            "16"
+                        ],
+                        "x": -5519.05,
+                        "y": -8281.17,
+                        "orbits": [
+                            2
+                        ]
+                    }
+                },
+                "nodes": {
+                    "12": {
+                        "skill": "57572",
+                        "name": "Enduring Composure",
+                        "icon": "Art/2DArt/SkillIcons/passives/ArmourNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "30% increased Armour",
+                            "Gain 1 Endurance Charge every second if you've been Hit Recently"
+                        ],
+                        "reminderText": [
+                            "(Recently refers to the past 4 seconds)"
+                        ],
+                        "group": "expansion_21",
+                        "orbit": 2,
+                        "orbitIndex": 0,
+                        "out": [
+                            "13"
+                        ],
+                        "in": [
+                            "16"
+                        ]
+                    },
+                    "13": {
+                        "skill": "43715",
+                        "group": "expansion_21",
+                        "orbit": 2,
+                        "orbitIndex": 4,
+                        "out": [
+                            "15",
+                            "12"
+                        ],
+                        "in": [
+                            "29712"
+                        ]
+                    },
+                    "15": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_21",
+                        "orbit": 2,
+                        "orbitIndex": 8,
+                        "out": [
+                            "16"
+                        ],
+                        "in": [
+                            "13"
+                        ]
+                    },
+                    "16": {
+                        "skill": "408",
+                        "name": "Cooked Alive",
+                        "icon": "Art/2DArt/SkillIcons/passives/FireDamageOverTimeNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "15% chance to Ignite",
+                            "Enemies Ignited by you have -5% to Fire Resistance"
+                        ],
+                        "reminderText": [
+                            "(Ignite deals Fire Damage over time, based on the base Fire Damage of the Skill, for 4 seconds)"
+                        ],
+                        "group": "expansion_21",
+                        "orbit": 2,
+                        "orbitIndex": 12,
+                        "out": [
+                            "12"
+                        ],
+                        "in": [
+                            "15"
+                        ]
+                    }
+                }
+            }
         },
-        "12": {
+        "11": {
             "type": "JewelPassiveTreeExpansionLarge",
             "subgraph": {
                 "groups": {
-                    "expansion_12": {
-                        "proxy": "25134",
+                    "expansion_11": {
+                        "proxy": "43989",
                         "nodes": [
-                            "1039",
-                            "40",
-                            "42",
-                            "43",
-                            "44",
-                            "45",
-                            "46",
-                            "48",
-                            "50"
+                            "0",
+                            "1",
+                            "10",
+                            "1000",
+                            "11",
+                            "3",
+                            "5",
+                            "7",
+                            "9"
                         ],
-                        "x": 4715,
-                        "y": 8517.45,
+                        "x": -4708.05,
+                        "y": -8281.17,
                         "orbits": [
                             3
                         ]
                     }
                 },
                 "nodes": {
-                    "1039": {
-                        "skill": "44810",
-                        "name": "Axe and Sword Damage Mastery",
-                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupSwordAndAxe.png",
-                        "isMastery": true,
-                        "stats": [],
-                        "group": "expansion_12",
-                        "orbit": 0,
+                    "0": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+9 to maximum Energy Shield",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_11",
+                        "orbit": 3,
                         "orbitIndex": 0,
-                        "out": [],
-                        "in": []
-                    },
-                    "40": {
-                        "skill": "37",
-                        "name": "Martial Prowess",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
-                        "isNotable": true,
-                        "stats": [
-                            "20% increased Attack Damage",
-                            "6% increased Attack Speed",
-                            "15% increased Global Accuracy Rating",
-                            "20% increased Damage with Ailments from Attack Skills"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 1,
                         "out": [
-                            "42"
+                            "1"
                         ],
                         "in": [
-                            "50"
+                            "11"
                         ]
                     },
-                    "42": {
-                        "skill": "22994",
-                        "name": "Medium Jewel Socket",
-                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
-                        "isJewelSocket": true,
-                        "expansionJewel": {
-                            "size": 1,
-                            "index": 0,
-                            "proxy": "51233",
-                            "parent": "46882"
-                        },
-                        "stats": [],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 4,
-                        "out": [
-                            "43"
-                        ],
-                        "in": [
-                            "40"
-                        ]
-                    },
-                    "43": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "+3 to all Attributes",
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 5,
-                        "out": [
-                            "44"
-                        ],
-                        "in": [
-                            "42"
-                        ]
-                    },
-                    "44": {
-                        "skill": "41284",
-                        "name": "Drive the Destruction",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
-                        "isNotable": true,
-                        "stats": [
-                            "0.8% of Attack Damage Leeched as Life",
-                            "25% increased Attack Damage when on Full Life",
-                            "Attacks have 10% chance to Maim on Hit"
-                        ],
-                        "reminderText": [
-                            "(Leeched Life is recovered over time. Multiple Leeches can occur simultaneously, up to a maximum rate)",
-                            "(Maimed enemies have 30% reduced Movement Speed)"
-                        ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 7,
-                        "out": [
-                            "45"
-                        ],
-                        "in": [
-                            "43"
-                        ]
-                    },
-                    "45": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "+3 to all Attributes",
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 8,
-                        "out": [
-                            "46"
-                        ],
-                        "in": [
-                            "44"
-                        ]
-                    },
-                    "46": {
-                        "skill": "46393",
+                    "1": {
+                        "skill": "9408",
                         "name": "Medium Jewel Socket",
                         "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
                         "isJewelSocket": true,
                         "expansionJewel": {
                             "size": 1,
                             "index": 2,
-                            "proxy": "35853",
-                            "parent": "46882"
+                            "proxy": "13201",
+                            "parent": "7960"
                         },
                         "stats": [],
-                        "group": "expansion_12",
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 1,
+                        "out": [
+                            "3"
+                        ],
+                        "in": [
+                            "0"
+                        ]
+                    },
+                    "10": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+9 to maximum Energy Shield",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 13,
+                        "out": [
+                            "11"
+                        ],
+                        "in": [
+                            "9"
+                        ]
+                    },
+                    "1000": {
+                        "skill": "16351",
+                        "name": "Minion Damage Mastery",
+                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupMinions.png",
+                        "isMastery": true,
+                        "stats": [],
+                        "group": "expansion_11",
+                        "orbit": 0,
+                        "orbitIndex": 0,
+                        "out": [],
+                        "in": []
+                    },
+                    "11": {
+                        "skill": "58949",
+                        "name": "Renewal",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Minions Regenerate 1% of Life per second",
+                            "Minions have 5% chance to deal Double Damage while they are on Full Life"
+                        ],
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 15,
+                        "out": [
+                            "0"
+                        ],
+                        "in": [
+                            "10"
+                        ]
+                    },
+                    "3": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 4,
+                        "out": [
+                            "5"
+                        ],
+                        "in": [
+                            "1"
+                        ]
+                    },
+                    "5": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+9 to maximum Energy Shield",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 7,
+                        "out": [
+                            "7",
+                            "3"
+                        ],
+                        "in": [
+                            "7960"
+                        ]
+                    },
+                    "7": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+9 to maximum Energy Shield",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_11",
                         "orbit": 3,
                         "orbitIndex": 9,
                         "out": [
-                            "48"
+                            "9"
                         ],
                         "in": [
-                            "45"
+                            "5"
                         ]
                     },
-                    "48": {
-                        "skill": "26197",
-                        "name": "Feed the Fury",
-                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedAttackDamageNotable.png",
+                    "9": {
+                        "skill": "29712",
+                        "name": "Medium Jewel Socket",
+                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+                        "isJewelSocket": true,
+                        "expansionJewel": {
+                            "size": 1,
+                            "index": 0,
+                            "proxy": "55706",
+                            "parent": "7960"
+                        },
+                        "stats": [],
+                        "group": "expansion_11",
+                        "orbit": 3,
+                        "orbitIndex": 12,
+                        "out": [
+                            "10"
+                        ],
+                        "in": [
+                            "7"
+                        ]
+                    }
+                }
+            }
+        },
+        "20": {
+            "type": "JewelPassiveTreeExpansionLarge",
+            "subgraph": {
+                "groups": {
+                    "expansion_20": {
+                        "proxy": "18756",
+                        "nodes": [
+                            "1195",
+                            "195",
+                            "196",
+                            "197",
+                            "198",
+                            "200",
+                            "202",
+                            "204",
+                            "206"
+                        ],
+                        "x": 4887.73,
+                        "y": -8158.76,
+                        "orbits": [
+                            3
+                        ]
+                    }
+                },
+                "nodes": {
+                    "1195": {
+                        "skill": "16351",
+                        "name": "Minion Damage Mastery",
+                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupMinions.png",
+                        "isMastery": true,
+                        "stats": [],
+                        "group": "expansion_20",
+                        "orbit": 0,
+                        "orbitIndex": 0,
+                        "out": [],
+                        "in": []
+                    },
+                    "195": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+7 to maximum Life",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 0,
+                        "out": [
+                            "196"
+                        ],
+                        "in": [
+                            "206"
+                        ]
+                    },
+                    "196": {
+                        "skill": "16650",
+                        "name": "Rotten Claws",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Minions have a 12% chance to Impale on Hit with Attacks"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 1,
+                        "out": [
+                            "197"
+                        ],
+                        "in": [
+                            "195"
+                        ]
+                    },
+                    "197": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+7 to maximum Life",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 3,
+                        "out": [
+                            "198"
+                        ],
+                        "in": [
+                            "196"
+                        ]
+                    },
+                    "198": {
+                        "skill": "13170",
+                        "name": "Medium Jewel Socket",
+                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+                        "isJewelSocket": true,
+                        "expansionJewel": {
+                            "size": 1,
+                            "index": 2,
+                            "proxy": "24452",
+                            "parent": "21984"
+                        },
+                        "stats": [],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 4,
+                        "out": [
+                            "200"
+                        ],
+                        "in": [
+                            "197"
+                        ]
+                    },
+                    "200": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 7,
+                        "out": [
+                            "202"
+                        ],
+                        "in": [
+                            "198"
+                        ]
+                    },
+                    "202": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+7 to maximum Life",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 9,
+                        "out": [
+                            "204",
+                            "200"
+                        ],
+                        "in": [
+                            "21984"
+                        ]
+                    },
+                    "204": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+7 to maximum Life",
+                            "+5% to Cold Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 12,
+                        "out": [
+                            "206"
+                        ],
+                        "in": [
+                            "202"
+                        ]
+                    },
+                    "206": {
+                        "skill": "64583",
+                        "name": "Medium Jewel Socket",
+                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+                        "isJewelSocket": true,
+                        "expansionJewel": {
+                            "size": 1,
+                            "index": 0,
+                            "proxy": "58194",
+                            "parent": "21984"
+                        },
+                        "stats": [],
+                        "group": "expansion_20",
+                        "orbit": 3,
+                        "orbitIndex": 15,
+                        "out": [
+                            "195"
+                        ],
+                        "in": [
+                            "204"
+                        ]
+                    }
+                }
+            }
+        },
+        "53": {
+            "type": "JewelPassiveTreeExpansionMedium",
+            "subgraph": {
+                "groups": {
+                    "expansion_53": {
+                        "proxy": "24452",
+                        "nodes": [
+                            "225",
+                            "226",
+                            "228",
+                            "229"
+                        ],
+                        "x": 5699.73,
+                        "y": -8158.76,
+                        "orbits": [
+                            2
+                        ]
+                    }
+                },
+                "nodes": {
+                    "225": {
+                        "skill": "23232",
+                        "name": "Insatiable Killer",
+                        "icon": "Art/2DArt/SkillIcons/passives/DualWieldingDamage.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Attack Skills deal 20% increased Damage while Dual Wielding",
+                            "5% increased Attack Speed while Dual Wielding",
+                            "5% chance to gain a Frenzy Charge on Kill while Dual Wielding"
+                        ],
+                        "group": "expansion_53",
+                        "orbit": 2,
+                        "orbitIndex": 0,
+                        "out": [
+                            "226"
+                        ],
+                        "in": [
+                            "229"
+                        ]
+                    },
+                    "226": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_53",
+                        "orbit": 2,
+                        "orbitIndex": 4,
+                        "out": [
+                            "228"
+                        ],
+                        "in": [
+                            "225"
+                        ]
+                    },
+                    "228": {
+                        "skill": "42601",
+                        "name": "Exploit Weakness",
+                        "icon": "Art/2DArt/SkillIcons/passives/CurseEffectNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Vulnerability can affect Hexproof Enemies",
+                            "Recover 2% of Life when you Kill a Cursed Enemy"
+                        ],
+                        "group": "expansion_53",
+                        "orbit": 2,
+                        "orbitIndex": 8,
+                        "out": [
+                            "229"
+                        ],
+                        "in": [
+                            "226"
+                        ]
+                    },
+                    "229": {
+                        "skill": "43715",
+                        "group": "expansion_53",
+                        "orbit": 2,
+                        "orbitIndex": 12,
+                        "out": [
+                            "225",
+                            "228"
+                        ],
+                        "in": [
+                            "13170"
+                        ]
+                    }
+                }
+            }
+        },
+        "13": {
+            "type": "JewelPassiveTreeExpansionLarge",
+            "subgraph": {
+                "groups": {
+                    "expansion_13": {
+                        "proxy": "30275",
+                        "nodes": [
+                            "1078",
+                            "79",
+                            "81",
+                            "83",
+                            "85",
+                            "86",
+                            "87",
+                            "88",
+                            "89"
+                        ],
+                        "x": -8798.67,
+                        "y": -116.185,
+                        "orbits": [
+                            3
+                        ]
+                    }
+                },
+                "nodes": {
+                    "1078": {
+                        "skill": "16351",
+                        "name": "Minion Damage Mastery",
+                        "icon": "Art/2DArt/SkillIcons/passives/AltMasteryGroupMinions.png",
+                        "isMastery": true,
+                        "stats": [],
+                        "group": "expansion_13",
+                        "orbit": 0,
+                        "orbitIndex": 0,
+                        "out": [],
+                        "in": []
+                    },
+                    "79": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 1,
+                        "out": [
+                            "81"
+                        ],
+                        "in": [
+                            "89"
+                        ]
+                    },
+                    "81": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+5% to Fire Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 4,
+                        "out": [
+                            "83",
+                            "79"
+                        ],
+                        "in": [
+                            "55190"
+                        ]
+                    },
+                    "83": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+5% to Fire Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 7,
+                        "out": [
+                            "85"
+                        ],
+                        "in": [
+                            "81"
+                        ]
+                    },
+                    "85": {
+                        "skill": "49080",
+                        "name": "Medium Jewel Socket",
+                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+                        "isJewelSocket": true,
+                        "expansionJewel": {
+                            "size": 1,
+                            "index": 0,
+                            "proxy": "25441",
+                            "parent": "55190"
+                        },
+                        "stats": [],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 9,
+                        "out": [
+                            "86"
+                        ],
+                        "in": [
+                            "83"
+                        ]
+                    },
+                    "86": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+5% to Fire Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 11,
+                        "out": [
+                            "87"
+                        ],
+                        "in": [
+                            "85"
+                        ]
+                    },
+                    "87": {
+                        "skill": "58949",
+                        "name": "Renewal",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Minions Regenerate 1% of Life per second",
+                            "Minions have 5% chance to deal Double Damage while they are on Full Life"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 12,
+                        "out": [
+                            "88"
+                        ],
+                        "in": [
+                            "86"
+                        ]
+                    },
+                    "88": {
+                        "skill": "49331",
+                        "name": "Minion Damage",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNode.png",
+                        "stats": [
+                            "+5% to Fire Resistance",
+                            "Minions deal 10% increased Damage"
+                        ],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 13,
+                        "out": [
+                            "89"
+                        ],
+                        "in": [
+                            "87"
+                        ]
+                    },
+                    "89": {
+                        "skill": "44169",
+                        "name": "Medium Jewel Socket",
+                        "icon": "Art/2DArt/SkillIcons/passives/MasteryBlank.png",
+                        "isJewelSocket": true,
+                        "expansionJewel": {
+                            "size": 1,
+                            "index": 2,
+                            "proxy": "53203",
+                            "parent": "55190"
+                        },
+                        "stats": [],
+                        "group": "expansion_13",
+                        "orbit": 3,
+                        "orbitIndex": 15,
+                        "out": [
+                            "79"
+                        ],
+                        "in": [
+                            "88"
+                        ]
+                    }
+                }
+            }
+        },
+        "33": {
+            "type": "JewelPassiveTreeExpansionMedium",
+            "subgraph": {
+                "groups": {
+                    "expansion_33": {
+                        "proxy": "25441",
+                        "nodes": [
+                            "90",
+                            "92",
+                            "93",
+                            "95"
+                        ],
+                        "x": -9143.74,
+                        "y": 613.015,
+                        "orbits": [
+                            2
+                        ]
+                    }
+                },
+                "nodes": {
+                    "90": {
+                        "skill": "43715",
+                        "group": "expansion_33",
+                        "orbit": 2,
+                        "orbitIndex": 1,
+                        "out": [
+                            "92",
+                            "95"
+                        ],
+                        "in": [
+                            "49080"
+                        ]
+                    },
+                    "92": {
+                        "skill": "41056",
+                        "name": "Opportunistic Fusilade",
+                        "icon": "Art/2DArt/SkillIcons/passives/WandDamage.png",
+                        "isNotable": true,
+                        "stats": [
+                            "50% increased Critical Strike Chance with Wands",
+                            "35% increased Damage with Wands if you've dealt a Critical Strike Recently"
+                        ],
+                        "reminderText": [
+                            "(Recently refers to the past 4 seconds)"
+                        ],
+                        "group": "expansion_33",
+                        "orbit": 2,
+                        "orbitIndex": 5,
+                        "out": [
+                            "93"
+                        ],
+                        "in": [
+                            "90"
+                        ]
+                    },
+                    "93": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_33",
+                        "orbit": 2,
+                        "orbitIndex": 9,
+                        "out": [
+                            "95"
+                        ],
+                        "in": [
+                            "92"
+                        ]
+                    },
+                    "95": {
+                        "skill": "52544",
+                        "name": "Savour the Moment",
+                        "icon": "Art/2DArt/SkillIcons/passives/EnergyShieldNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased maximum Energy Shield",
+                            "Regenerate 3.00% of Energy Shield per second while stationary"
+                        ],
+                        "group": "expansion_33",
+                        "orbit": 2,
+                        "orbitIndex": 13,
+                        "out": [
+                            "90"
+                        ],
+                        "in": [
+                            "93"
+                        ]
+                    }
+                }
+            }
+        },
+        "35": {
+            "type": "JewelPassiveTreeExpansionMedium",
+            "subgraph": {
+                "groups": {
+                    "expansion_35": {
+                        "proxy": "53203",
+                        "nodes": [
+                            "109",
+                            "110",
+                            "112",
+                            "113"
+                        ],
+                        "x": -9204.17,
+                        "y": -818.535,
+                        "orbits": [
+                            2
+                        ]
+                    }
+                },
+                "nodes": {
+                    "109": {
+                        "skill": "58944",
+                        "name": "Vicious Guard",
+                        "icon": "Art/2DArt/SkillIcons/passives/BlockAttackDmgNotable.png",
                         "isNotable": true,
                         "stats": [
                             "0.4% of Attack Damage Leeched as Life",
-                            "30% increased Damage while Leeching",
-                            "15% increased Attack Speed while Leeching"
+                            "Regenerate 1.5% of Life per second",
+                            "+6% Chance to Block Attack Damage"
                         ],
                         "reminderText": [
                             "(Leeched Life is recovered over time. Multiple Leeches can occur simultaneously, up to a maximum rate)"
                         ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 12,
+                        "group": "expansion_35",
+                        "orbit": 2,
+                        "orbitIndex": 3,
                         "out": [
-                            "50"
+                            "110"
                         ],
                         "in": [
-                            "46"
+                            "113"
                         ]
                     },
-                    "50": {
-                        "skill": "14084",
-                        "name": "Axe and Sword Damage",
-                        "icon": "Art/2DArt/SkillIcons/passives/NodeAxeandSwordDamage.png",
-                        "stats": [
-                            "+3 to all Attributes",
-                            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
-                            "Sword Attacks deal 12% increased Damage with Hits and Ailments"
-                        ],
-                        "reminderText": [
-                            "(Ailments that deal Damage are Bleeding, Ignited, and Poisoned)"
-                        ],
-                        "group": "expansion_12",
-                        "orbit": 3,
-                        "orbitIndex": 15,
+                    "110": {
+                        "skill": "43715",
+                        "group": "expansion_35",
+                        "orbit": 2,
+                        "orbitIndex": 7,
                         "out": [
-                            "40",
-                            "48"
+                            "112",
+                            "109"
                         ],
                         "in": [
-                            "46882"
+                            "44169"
+                        ]
+                    },
+                    "112": {
+                        "skill": "68",
+                        "name": "Hulking Corpses",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreaseMinionLifeNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "Minions have 25% increased maximum Life",
+                            "Raised Zombies have 5% chance to Taunt Enemies on Hit"
+                        ],
+                        "group": "expansion_35",
+                        "orbit": 2,
+                        "orbitIndex": 11,
+                        "out": [
+                            "113"
+                        ],
+                        "in": [
+                            "110"
+                        ]
+                    },
+                    "113": {
+                        "skill": "57892",
+                        "name": "Primordial Bond",
+                        "icon": "Art/2DArt/SkillIcons/passives/IncreasedMinionDamageNotable.png",
+                        "isNotable": true,
+                        "stats": [
+                            "10% increased Damage per Summoned Golem",
+                            "40% increased Effect of Buffs granted by your Golems",
+                            "Golems have 25% increased Maximum Life"
+                        ],
+                        "group": "expansion_35",
+                        "orbit": 2,
+                        "orbitIndex": 15,
+                        "out": [
+                            "109"
+                        ],
+                        "in": [
+                            "112"
                         ]
                     }
                 }
             }
-        },
-        "4": {
-            "type": "JewelTimeless",
-            "radius": 1800,
-            "radiusVisual": "Karui"
-        },
-        "10": {
-            "type": "JewelStr"
-        },
-        "27": {
-            "type": "JewelDex"
         }
     }
 }

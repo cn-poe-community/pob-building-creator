@@ -67,7 +67,12 @@ export class Transformer {
             const slot = Slot.NewEquipmentSlot(slotName, item.id);
             slotSet.append(slot);
 
-            if (data.socketedItems && data.socketedItems.length > 0) {
+            if (
+                data.sockets &&
+                data.sockets.length > 0 &&
+                data.socketedItems &&
+                data.socketedItems.length > 0
+            ) {
                 const sockets = data.sockets;
                 const socketedItems = data.socketedItems;
 
@@ -159,7 +164,7 @@ export class Transformer {
         if (isPhreciaAscendancy(character.class)) {
             spec.treeVersion = "3_26_alternate";
         } else {
-            spec.treeVersion = "3_26";
+            spec.treeVersion = "3_27";
         }
 
         for (const [node, effect] of Object.entries<number>(

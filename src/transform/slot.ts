@@ -13,6 +13,8 @@ const SLOT_MAP: { [key: string]: string } = {
     Ring2: "Ring 2",
     Weapon: "Weapon 1",
     Weapon2: "Weapon 1 Swap",
+    BrequelGrafts: "Graft 1",
+    BrequelGrafts2: "Graft 2",
 };
 
 export function getSlotName(itemData: ItemTypes.EquippedItem) {
