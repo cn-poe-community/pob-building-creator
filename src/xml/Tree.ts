@@ -24,8 +24,7 @@ export class Spec {
         const masteryEffectsView = this.masteryEffects.map((me) => me.toString()).join(",");
         const nodesView = this.nodes.join(",");
 
-        
-return `<Spec treeVersion="${this.treeVersion}" ascendClassId="${this.ascendClassId}" secondaryAscendClassId="${this.secondaryAscendClassId}" classId="${this.classId}" masteryEffects="${masteryEffectsView}" nodes="${nodesView}">
+        return `<Spec treeVersion="${this.treeVersion}" ascendClassId="${this.ascendClassId}" secondaryAscendClassId="${this.secondaryAscendClassId}" classId="${this.classId}" masteryEffects="${masteryEffectsView}" nodes="${nodesView}">
 ${this.sockets}
 ${this.overrides}
 </Spec>`;
