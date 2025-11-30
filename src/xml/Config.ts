@@ -1,5 +1,3 @@
-import Mustache from "mustache";
-
 const ENEMY_SHAPER = "Pinnacle";
 
 export class Config {
@@ -51,13 +49,11 @@ export class Config {
             }
         }
 
-        const tmpl = `<Config>
-{{#inputs}}
-{{.}}
-{{/inputs}}
-</Config>`;
+        const inputsView = inputs.map((input) => input.toString()).join("\n");
 
-        return Mustache.render(tmpl, { inputs });
+        return `<Config>
+${inputsView}
+</Config>`;
     }
 }
 

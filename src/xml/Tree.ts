@@ -1,4 +1,3 @@
-import Mustache from "mustache";
 import { PassiveSkillTypes } from "pathofexile-api-types";
 
 export class Tree {
@@ -21,20 +20,15 @@ export class Spec {
     sockets = new Sockets();
     overrides = new Overrides();
 
-    public viewModel(): any {
-        const model: any = {};
-        model.masteryEffectsView = this.masteryEffects.map((me) => me.toString()).join(",");
-        model.nodesView = this.nodes.join(",");
-
-        return Object.assign({}, this, model);
-    }
-
     public toString(): string {
-        const tmpl = `<Spec treeVersion="{{treeVersion}}" ascendClassId="{{ascendClassId}}" secondaryAscendClassId="{{secondaryAscendClassId}}" classId="{{classId}}" masteryEffects="{{masteryEffectsView}}" nodes="{{nodesView}}">
-{{sockets}}
-{{overrides}}
+        const masteryEffectsView = this.masteryEffects.map((me) => me.toString()).join(",");
+        const nodesView = this.nodes.join(",");
+
+        
+return `<Spec treeVersion="${this.treeVersion}" ascendClassId="${this.ascendClassId}" secondaryAscendClassId="${this.secondaryAscendClassId}" classId="${this.classId}" masteryEffects="${masteryEffectsView}" nodes="${nodesView}">
+${this.sockets}
+${this.overrides}
 </Spec>`;
-        return Mustache.render(tmpl, this.viewModel());
     }
 }
 
@@ -60,12 +54,10 @@ export class Sockets {
     }
 
     public toString(): string {
-        const tmpl = `<Sockets>
-{{#sockets}}
-{{toString}}
-{{/sockets}}
+        const socketsView = this.sockets.map((socket) => socket.toString()).join("\n");
+        return `<Sockets>
+${socketsView}
 </Sockets>`;
-        return Mustache.render(tmpl, this);
     }
 }
 
@@ -94,13 +86,10 @@ export class Overrides {
     }
 
     public toString(): string {
-        const tmpl = `<Overrides>
-{{#members}}
-{{.}}
-{{/members}}
+        const membersView = this.members.map((member) => member.toString()).join("\n");
+        return `<Overrides>
+${membersView}
 </Overrides>`;
-
-        return Mustache.render(tmpl, this);
     }
 }
 
@@ -114,9 +103,7 @@ export class Override {
     }
 
     public toString(): string {
-        const tmpl = `<Override dn="${this.dn}" nodeId="${this.nodeId}">
+        return `<Override dn="${this.dn}" nodeId="${this.nodeId}">
 </Override>`;
-
-        return Mustache.render(tmpl, this);
     }
 }

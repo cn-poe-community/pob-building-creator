@@ -1,4 +1,3 @@
-import Mustache from "mustache";
 import { getFirstNumOrDefault } from "../util/strings.js";
 import { isTransfiguredGem } from "../transform/gem/gem.js";
 import { ItemTypes } from "pathofexile-api-types";
@@ -16,12 +15,10 @@ ${this.skillSet}
 export class SkillSet {
     skills: Skill[] = [];
     public toString(): string {
-        const tmpl = `<SkillSet id="1">
-{{#skills}}
-{{toString}}
-{{/skills}}
+        const skillsView = this.skills.map((skill) => skill.toString()).join("\n");
+        return `<SkillSet id="1">
+${skillsView}
 </SkillSet>`;
-        return Mustache.render(tmpl, this);
     }
 }
 
@@ -40,12 +37,11 @@ export class Skill {
     }
 
     public toString(): string {
-        const tmpl = `<Skill enabled="true" slot="{{slot}}" mainActiveSkill="nil">
-{{#gems}}
-{{.}}
-{{/gems}}
+        const gemsView = this.gems.map((gem) => gem.toString()).join("\n");
+
+        return `<Skill enabled="true" slot="${this.slot}" mainActiveSkill="nil">
+${gemsView}
 </Skill>`;
-        return Mustache.render(tmpl, this);
     }
 }
 
@@ -93,7 +89,8 @@ export class Gem {
     }
 
     public toString(): string {
-        const tmpl = `<Gem level="{{level}}" qualityId="{{qualityId}}" quality="{{quality}}" nameSpec="{{nameSpec}}" enabled="true" enableGlobal1="{{enableGlobal1}}" enableGlobal2="{{enableGlobal2}}"/>`;
-        return Mustache.render(tmpl, this);
+        return `<Gem level="${this.level}" qualityId="${this.qualityId}" \
+quality="${this.quality}" nameSpec="${this.nameSpec}" enabled="true" \
+enableGlobal1="${this.enableGlobal1}" enableGlobal2="${this.enableGlobal2}"/>`;
     }
 }

@@ -1,4 +1,3 @@
-import Mustache from "mustache";
 import { ItemSet } from "./Slot.js";
 import { getFirstNum } from "../util/strings.js";
 import { ItemTypes } from "pathofexile-api-types";
@@ -143,95 +142,112 @@ export class Item {
     }
 
     public toString(): string {
-        const tmpl = `<Item id="${this.id}">
-Rarity: {{rarity}}
-{{#name}}
-{{name}}
-{{baseType}}
-{{/name}}
-{{^name}}
-{{typeLine}}
-{{/name}}
-{{#evasionRating}}
-Evasion: {{evasionRating}}
-{{/evasionRating}}
-{{#energyShield}}
-Energy Shield: {{energyShield}}
-{{/energyShield}}
-{{#armour}}
-Armour: {{armour}}
-{{/armour}}
-{{#ward}}
-Ward: {{ward}}
-{{/ward}}
-Unique ID: {{id}}
-{{#shaper}}
-Shaper Item
-{{/shaper}}
-{{#elder}}
-Elder Item
-{{/elder}}
-{{#warlord}}
-Warlord Item
-{{/warlord}}
-{{#hunter}}
-Hunter Item
-{{/hunter}}
-{{#crusader}}
-Crusader Item
-{{/crusader}}
-{{#redeemer}}
-Redeemer Item
-{{/redeemer}}
-{{#searing}}
-Searing Exarch Item
-{{/searing}}
-{{#tangled}}
-Eater of Worlds Item
-{{/tangled}}
-Item Level: {{ilvl}}
-{{#quality}}
-Quality: {{quality}}
-{{/quality}}
-{{#sockets}}
-Sockets: {{sockets}}
-{{/sockets}}
-{{#radius}}
-Radius: {{radius}}
-{{/radius}}
-{{#limitedTo}}
-Limited to: {{limitedTo}}
-{{/limitedTo}}
-{{#requireClass}}
-Requires Class {{requireClass}}
-{{/requireClass}}
-Implicits: {{implicitCount}}
-{{#enchantMods}}
-{crafted}{{.}}
-{{/enchantMods}}
-{{#implicitMods}}
-{{.}}
-{{/implicitMods}}
-{{#explicitMods}}
-{{.}}
-{{/explicitMods}}
-{{#mutatedMods}}
-{mutated}{{.}}
-{{/mutatedMods}}
-{{#fracturedMods}}
-{fractured}{{.}}
-{{/fracturedMods}}
-{{#craftedMods}}
-{crafted}{{.}}
-{{/craftedMods}}
-{{#crucibleMods}}
-{crucible}{{.}}
-{{/crucibleMods}}
-{{#corrupted}}
-Corrupted
-{{/corrupted}}
-</Item>`;
-        return Mustache.render(tmpl, this.viewModel());
+        const builder = Array<string>();
+        const model = this.viewModel();
+
+        builder.push(`<Item id="${this.id}">`);
+        builder.push(`Rarity: ${model.rarity}`);
+        if (model.name) {
+            builder.push(model.name);
+            builder.push(model.baseType);
+        } else {
+            builder.push(model.typeLine);
+        }
+        if (model.evasionRating) {
+            builder.push(`Evasion: ${model.evasionRating}`);
+        }
+        if (model.energyShield) {
+            builder.push(`Energy Shield: ${model.energyShield}`);
+        }
+        if (model.armour) {
+            builder.push(`Armour: ${model.armour}`);
+        }
+        if (model.ward) {
+            builder.push(`Ward: ${model.ward}`);
+        }
+        builder.push(`Unique ID: ${model.id}`);
+        if (model.shaper) {
+            builder.push("Shaper Item");
+        }
+        if (model.elder) {
+            builder.push("Elder Item");
+        }
+        if (model.warlord) {
+            builder.push("Warlord Item");
+        }
+        if (model.hunter) {
+            builder.push("Hunter Item");
+        }
+        if (model.crusader) {
+            builder.push("Crusader Item");
+        }
+        if (model.redeemer) {
+            builder.push("Redeemer Item");
+        }
+        if (model.searing) {
+            builder.push("Searing Exarch Item");
+        }
+        if (model.tangled) {
+            builder.push("Eater of Worlds Item");
+        }
+        builder.push(`Item Level: ${model.ilvl}`);
+        if (model.quality !== undefined) {
+            builder.push(`Quality: ${model.quality}`);
+        }
+        if (model.sockets) {
+            builder.push(`Sockets: ${model.sockets}`);
+        }
+        if (model.radius) {
+            builder.push(`Radius: ${model.radius}`);
+        }
+        if (model.limitedTo) {
+            builder.push(`Limited to: ${model.limitedTo}`);
+        }
+        if (model.requireClass) {
+            builder.push(`Requires Class ${model.requireClass}`);
+        }
+        builder.push(`Implicits: ${model.implicitCount}`);
+        if (model.enchantMods) {
+            for (const mod of model.enchantMods) {
+                builder.push(`{crafted}${mod}`);
+            }
+        }
+        if (model.implicitMods) {
+            for (const mod of model.implicitMods) {
+                builder.push(mod);
+            }
+        }
+        if (model.explicitMods) {
+            for (const mod of model.explicitMods) {
+                builder.push(mod);
+            }
+        }
+        if (model.mutatedMods) {
+            for (const mod of model.mutatedMods) {
+                builder.push(`{mutated}${mod}`);
+            }
+        }
+        if (model.fracturedMods) {
+            for (const mod of model.fracturedMods) {
+                builder.push(`{fractured}${mod}`);
+            }
+        }
+        if (model.craftedMods) {
+            for (const mod of model.craftedMods) {
+                builder.push(`{crafted}${mod}`);
+            }
+        }
+        if (model.crucibleMods) {
+            for (const mod of model.crucibleMods) {
+                builder.push(`{crucible}${mod}`);
+            }
+        }
+        if (model.corrupted) {
+            builder.push("Corrupted");
+        }
+        builder.push(`</Item>`);
+
+        return builder.join("\n");
     }
 }
 
@@ -240,12 +256,10 @@ export class Items {
     itemSet = new ItemSet();
 
     public toString(): string {
-        const tmpl = `<Items>
-{{#itemList}}
-{{.}}
-{{/itemList}}
+        const itemsView = this.itemList.map((item) => item.toString()).join("\n");
+        return `<Items>
+${itemsView}
 ${this.itemSet}
 </Items>`;
-        return Mustache.render(tmpl, this);
     }
 }

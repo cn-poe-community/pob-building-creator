@@ -1,5 +1,3 @@
-import Mustache from "mustache";
-
 export class Slot {
     name: string;
     itemPbURL = "";
@@ -28,8 +26,20 @@ export class Slot {
     }
 
     public toString(): string {
-        const tmpl = `<Slot itemPbURL="${this.itemPbURL}" {{#active}}active="{{active}}"{{/active}} name="{{name}}" {{#itemId}}itemId="{{itemId}}"{{/itemId}} {{#nodeId}}nodeId="{{nodeId}}"{{/nodeId}}/>`;
-        return Mustache.render(tmpl, this);
+        const builder = Array<string>();
+        builder.push(`<Slot itemPbURL="${this.itemPbURL}"`);
+        if (this.active) {
+            builder.push(` active="${this.active}"`);
+        }
+        builder.push(` name="${this.name}"`);
+        if (this.itemId !== undefined) {
+            builder.push(` itemId="${this.itemId}"`);
+        }
+        if (this.nodeId !== undefined) {
+            builder.push(` nodeId="${this.nodeId}"`);
+        }
+        builder.push("/>");
+        return builder.join("");
     }
 }
 
@@ -53,11 +63,9 @@ export class ItemSet {
     }
 
     public toString() {
-        const tmpl = `<ItemSet useSecondWeaponSet="${this.useSecondWeaponSet}" id="${this.id}">
-{{#slots}}
-{{.}}
-{{/slots}}
+        const slotsView = this.slots.map((slot) => slot.toString()).join("\n");
+        return `<ItemSet useSecondWeaponSet="${this.useSecondWeaponSet}" id="${this.id}">
+${slotsView}
 </ItemSet>`;
-        return Mustache.render(tmpl, this);
     }
 }
