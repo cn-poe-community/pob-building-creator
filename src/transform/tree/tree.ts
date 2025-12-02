@@ -1,4 +1,3 @@
-import { Base64 } from "js-base64";
 import { ClusterJewelMeta, TREE, CLUSTER_JEWEL_META_MAP, ExpansionJewel } from "./data.js";
 import { PassiveSkillTypes } from "pathofexile-api-types";
 
@@ -80,42 +79,6 @@ export function isPhreciaAscendancy(characterClass: string): boolean {
         }
     }
     return false;
-}
-
-// copy from https://github.com/afq984/void-battery/blob/main/web/pobgen.py
-export function getEncodedTree(tree: PassiveSkillTypes.GetPassiveSkillsResult) {
-    const hashes: number[] = tree.hashes;
-    const head: number[] = [0, 0, 0, 6, tree.character, tree.ascendancy];
-    const masteryEffects: number[] = [];
-    for (const [node, effect] of Object.entries<number>(tree.mastery_effects)) {
-        masteryEffects.push(effect);
-        masteryEffects.push(Number(node));
-    }
-
-    const buffer = new ArrayBuffer(
-        head.length + 1 + hashes.length * 2 + 2 + masteryEffects.length * 2
-    );
-    const view = new DataView(buffer);
-    let offset = 0;
-    for (const n of head) {
-        view.setUint8(offset, n);
-        offset += 1;
-    }
-    view.setUint8(offset, hashes.length);
-    offset += 1;
-    for (const hash of hashes) {
-        view.setUint16(offset, hash);
-        offset += 2;
-    }
-    view.setUint8(offset++, 0);
-    view.setUint8(offset++, masteryEffects.length / 2);
-    for (const masteryEffect of masteryEffects) {
-        view.setUint16(offset, masteryEffect);
-        offset += 2;
-    }
-
-    const code = Base64.fromUint8Array(new Uint8Array(buffer));
-    return code.replaceAll("+", "-").replaceAll("/", "_");
 }
 
 // 返回所有星团上点亮的node的nodeId。
